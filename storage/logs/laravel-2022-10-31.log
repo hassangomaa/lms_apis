@@ -1,99 +1,702 @@
-[2022-10-31 14:04:18] local.ERROR: Please provide a valid cache path. {"exception":"[object] (InvalidArgumentException(code: 0): Please provide a valid cache path. at /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/View/Compilers/Compiler.php:36)
+[2022-10-31 08:45:30] production.ERROR: SQLSTATE[HY000] [1044] Access denied for user ''@'localhost' to database 'forge' (SQL: select column_name as `column_name` from information_schema.columns where table_schema = forge and table_name = courses) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 1044): SQLSTATE[HY000] [1044] Access denied for user ''@'localhost' to database 'forge' (SQL: select column_name as `column_name` from information_schema.columns where table_schema = forge and table_name = courses) at /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Database/Connection.php:712)
 [stacktrace]
-#0 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/View/ViewServiceProvider.php(88): Illuminate\\View\\Compilers\\Compiler->__construct()
-#1 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Container/Container.php(873): Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}()
-#2 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Container/Container.php(758): Illuminate\\Container\\Container->build()
-#3 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(851): Illuminate\\Container\\Container->resolve()
-#4 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Container/Container.php(694): Illuminate\\Foundation\\Application->resolve()
-#5 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(836): Illuminate\\Container\\Container->make()
-#6 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Container/Container.php(1419): Illuminate\\Foundation\\Application->make()
-#7 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/View/ViewServiceProvider.php(150): Illuminate\\Container\\Container->offsetGet()
-#8 [internal function]: Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}()
-#9 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/View/Engines/EngineResolver.php(55): call_user_func()
-#10 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/facade/ignition/src/IgnitionServiceProvider.php(467): Illuminate\\View\\Engines\\EngineResolver->resolve()
-#11 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/facade/ignition/src/IgnitionServiceProvider.php(158): Facade\\Ignition\\IgnitionServiceProvider->hasCustomViewEnginesRegistered()
-#12 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/facade/ignition/src/IgnitionServiceProvider.php(101): Facade\\Ignition\\IgnitionServiceProvider->registerViewEngines()
-#13 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Facade\\Ignition\\IgnitionServiceProvider->boot()
-#14 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
-#15 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
-#16 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
-#17 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call()
-#18 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(924): Illuminate\\Container\\Container->call()
-#19 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(905): Illuminate\\Foundation\\Application->bootProvider()
-#20 [internal function]: Illuminate\\Foundation\\Application->Illuminate\\Foundation\\{closure}()
-#21 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(906): array_walk()
-#22 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php(17): Illuminate\\Foundation\\Application->boot()
-#23 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(237): Illuminate\\Foundation\\Bootstrap\\BootProviders->bootstrap()
-#24 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(153): Illuminate\\Foundation\\Application->bootstrapWith()
-#25 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(137): Illuminate\\Foundation\\Http\\Kernel->bootstrap()
-#26 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(111): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
-#27 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
-#28 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/server.php(21): require_once('...')
-#29 {main}
+#0 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Database/Connection.php(672): Illuminate\\Database\\Connection->runQueryCallback()
+#1 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Database/Connection.php(376): Illuminate\\Database\\Connection->run()
+#2 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlBuilder.php(59): Illuminate\\Database\\Connection->select()
+#3 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(149): Illuminate\\Database\\Schema\\MySqlBuilder->getColumnListing()
+#4 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(261): Illuminate\\Database\\Schema\\Builder->hasColumn()
+#5 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/app/Scopes/LmsScope.php(45): Illuminate\\Support\\Facades\\Facade::__callStatic()
+#6 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1172): App\\Scopes\\LmsScope->apply()
+#7 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1199): Illuminate\\Database\\Eloquent\\Builder->Illuminate\\Database\\Eloquent\\{closure}()
+#8 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1174): Illuminate\\Database\\Eloquent\\Builder->callScope()
+#9 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(604): Illuminate\\Database\\Eloquent\\Builder->applyScopes()
+#10 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/app/Http/Controllers/Api/CourseApiController.php(73): Illuminate\\Database\\Eloquent\\Builder->get()
+#11 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): App\\Http\\Controllers\\Api\\CourseApiController->getAllCourses()
+#12 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction()
+#13 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Route.php(262): Illuminate\\Routing\\ControllerDispatcher->dispatch()
+#14 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Route.php(205): Illuminate\\Routing\\Route->runController()
+#15 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(721): Illuminate\\Routing\\Route->run()
+#16 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(128): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}()
+#17 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#18 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
+#19 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(127): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#20 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(63): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequest()
+#21 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle()
+#22 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(103): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#23 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(723): Illuminate\\Pipeline\\Pipeline->then()
+#24 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(698): Illuminate\\Routing\\Router->runRouteWithinStack()
+#25 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(662): Illuminate\\Routing\\Router->runRoute()
+#26 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(651): Illuminate\\Routing\\Router->dispatchToRoute()
+#27 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(167): Illuminate\\Routing\\Router->dispatch()
+#28 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(128): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()
+#29 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/spondonit/lms-service/src/Middleware/LmsService.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#30 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): SpondonIt\\LmsService\\Middleware\\LmsService->handle()
+#31 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/livewire/livewire/src/DisableBrowserCache.php(19): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#32 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Livewire\\DisableBrowserCache->handle()
+#33 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/barryvdh/laravel-debugbar/src/Middleware/InjectDebugbar.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#34 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Barryvdh\\Debugbar\\Middleware\\InjectDebugbar->handle()
+#35 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#36 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#37 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle()
+#38 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#39 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#40 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle()
+#41 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#42 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle()
+#43 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(86): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#44 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle()
+#45 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/fruitcake/laravel-cors/src/HandleCors.php(52): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#46 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Fruitcake\\Cors\\HandleCors->handle()
+#47 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/fideloper/proxy/src/TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#48 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Fideloper\\Proxy\\TrustProxies->handle()
+#49 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(103): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#50 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(142): Illuminate\\Pipeline\\Pipeline->then()
+#51 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(111): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#52 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
+#53 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/server.php(21): require_once('...')
+#54 {main}
+
+[previous exception] [object] (PDOException(code: 1044): SQLSTATE[HY000] [1044] Access denied for user ''@'localhost' to database 'forge' at /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:70)
+[stacktrace]
+#0 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(70): PDO->__construct()
+#1 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(46): Illuminate\\Database\\Connectors\\Connector->createPdoConnection()
+#2 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Database/Connectors/MySqlConnector.php(24): Illuminate\\Database\\Connectors\\Connector->createConnection()
+#3 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(184): Illuminate\\Database\\Connectors\\MySqlConnector->connect()
+#4 [internal function]: Illuminate\\Database\\Connectors\\ConnectionFactory->Illuminate\\Database\\Connectors\\{closure}()
+#5 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1064): call_user_func()
+#6 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1100): Illuminate\\Database\\Connection->getPdo()
+#7 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Database/Connection.php(442): Illuminate\\Database\\Connection->getReadPdo()
+#8 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Database/Connection.php(368): Illuminate\\Database\\Connection->getPdoForSelect()
+#9 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Database/Connection.php(705): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}()
+#10 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Database/Connection.php(672): Illuminate\\Database\\Connection->runQueryCallback()
+#11 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Database/Connection.php(376): Illuminate\\Database\\Connection->run()
+#12 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlBuilder.php(59): Illuminate\\Database\\Connection->select()
+#13 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(149): Illuminate\\Database\\Schema\\MySqlBuilder->getColumnListing()
+#14 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(261): Illuminate\\Database\\Schema\\Builder->hasColumn()
+#15 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/app/Scopes/LmsScope.php(45): Illuminate\\Support\\Facades\\Facade::__callStatic()
+#16 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1172): App\\Scopes\\LmsScope->apply()
+#17 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1199): Illuminate\\Database\\Eloquent\\Builder->Illuminate\\Database\\Eloquent\\{closure}()
+#18 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1174): Illuminate\\Database\\Eloquent\\Builder->callScope()
+#19 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(604): Illuminate\\Database\\Eloquent\\Builder->applyScopes()
+#20 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/app/Http/Controllers/Api/CourseApiController.php(73): Illuminate\\Database\\Eloquent\\Builder->get()
+#21 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): App\\Http\\Controllers\\Api\\CourseApiController->getAllCourses()
+#22 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction()
+#23 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Route.php(262): Illuminate\\Routing\\ControllerDispatcher->dispatch()
+#24 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Route.php(205): Illuminate\\Routing\\Route->runController()
+#25 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(721): Illuminate\\Routing\\Route->run()
+#26 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(128): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}()
+#27 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#28 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
+#29 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(127): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#30 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(63): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequest()
+#31 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle()
+#32 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(103): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#33 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(723): Illuminate\\Pipeline\\Pipeline->then()
+#34 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(698): Illuminate\\Routing\\Router->runRouteWithinStack()
+#35 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(662): Illuminate\\Routing\\Router->runRoute()
+#36 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(651): Illuminate\\Routing\\Router->dispatchToRoute()
+#37 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(167): Illuminate\\Routing\\Router->dispatch()
+#38 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(128): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()
+#39 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/spondonit/lms-service/src/Middleware/LmsService.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#40 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): SpondonIt\\LmsService\\Middleware\\LmsService->handle()
+#41 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/livewire/livewire/src/DisableBrowserCache.php(19): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#42 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Livewire\\DisableBrowserCache->handle()
+#43 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/barryvdh/laravel-debugbar/src/Middleware/InjectDebugbar.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#44 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Barryvdh\\Debugbar\\Middleware\\InjectDebugbar->handle()
+#45 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#46 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#47 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle()
+#48 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#49 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#50 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle()
+#51 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#52 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle()
+#53 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(86): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#54 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle()
+#55 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/fruitcake/laravel-cors/src/HandleCors.php(52): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#56 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Fruitcake\\Cors\\HandleCors->handle()
+#57 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/fideloper/proxy/src/TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#58 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Fideloper\\Proxy\\TrustProxies->handle()
+#59 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(103): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#60 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(142): Illuminate\\Pipeline\\Pipeline->then()
+#61 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(111): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#62 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
+#63 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/server.php(21): require_once('...')
+#64 {main}
 "} 
-[2022-10-31 14:04:35] local.ERROR: Please provide a valid cache path. {"exception":"[object] (InvalidArgumentException(code: 0): Please provide a valid cache path. at /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/View/Compilers/Compiler.php:36)
+[2022-10-31 16:21:23] local.ERROR: View [frontend.infixlmstheme.auth.login] not found. {"exception":"[object] (InvalidArgumentException(code: 0): View [frontend.infixlmstheme.auth.login] not found. at /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/View/FileViewFinder.php:137)
 [stacktrace]
-#0 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/View/ViewServiceProvider.php(88): Illuminate\\View\\Compilers\\Compiler->__construct()
-#1 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Container/Container.php(873): Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}()
-#2 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Container/Container.php(758): Illuminate\\Container\\Container->build()
-#3 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(851): Illuminate\\Container\\Container->resolve()
-#4 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Container/Container.php(694): Illuminate\\Foundation\\Application->resolve()
-#5 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(836): Illuminate\\Container\\Container->make()
-#6 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Container/Container.php(1419): Illuminate\\Foundation\\Application->make()
-#7 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/View/ViewServiceProvider.php(150): Illuminate\\Container\\Container->offsetGet()
-#8 [internal function]: Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}()
-#9 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/View/Engines/EngineResolver.php(55): call_user_func()
-#10 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/facade/ignition/src/IgnitionServiceProvider.php(467): Illuminate\\View\\Engines\\EngineResolver->resolve()
-#11 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/facade/ignition/src/IgnitionServiceProvider.php(158): Facade\\Ignition\\IgnitionServiceProvider->hasCustomViewEnginesRegistered()
-#12 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/facade/ignition/src/IgnitionServiceProvider.php(101): Facade\\Ignition\\IgnitionServiceProvider->registerViewEngines()
-#13 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Facade\\Ignition\\IgnitionServiceProvider->boot()
-#14 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
-#15 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
-#16 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
-#17 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call()
-#18 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(924): Illuminate\\Container\\Container->call()
-#19 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(905): Illuminate\\Foundation\\Application->bootProvider()
-#20 [internal function]: Illuminate\\Foundation\\Application->Illuminate\\Foundation\\{closure}()
-#21 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(906): array_walk()
-#22 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php(17): Illuminate\\Foundation\\Application->boot()
-#23 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(237): Illuminate\\Foundation\\Bootstrap\\BootProviders->bootstrap()
-#24 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(153): Illuminate\\Foundation\\Application->bootstrapWith()
-#25 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(137): Illuminate\\Foundation\\Http\\Kernel->bootstrap()
-#26 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(111): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
-#27 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
-#28 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/server.php(21): require_once('...')
-#29 {main}
+#0 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/View/FileViewFinder.php(79): Illuminate\\View\\FileViewFinder->findInPaths()
+#1 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/View/Factory.php(138): Illuminate\\View\\FileViewFinder->find()
+#2 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(932): Illuminate\\View\\Factory->make()
+#3 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/app/Http/Controllers/Auth/LoginController.php(326): view()
+#4 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): App\\Http\\Controllers\\Auth\\LoginController->showLoginForm()
+#5 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction()
+#6 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Route.php(262): Illuminate\\Routing\\ControllerDispatcher->dispatch()
+#7 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Route.php(205): Illuminate\\Routing\\Route->runController()
+#8 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(721): Illuminate\\Routing\\Route->run()
+#9 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(128): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}()
+#10 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/app/Http/Middleware/RedirectIfAuthenticated.php(40): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#11 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): App\\Http\\Middleware\\RedirectIfAuthenticated->handle()
+#12 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#13 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
+#14 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(127): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#15 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(63): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequest()
+#16 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle()
+#17 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(103): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#18 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(723): Illuminate\\Pipeline\\Pipeline->then()
+#19 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(698): Illuminate\\Routing\\Router->runRouteWithinStack()
+#20 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(662): Illuminate\\Routing\\Router->runRoute()
+#21 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(651): Illuminate\\Routing\\Router->dispatchToRoute()
+#22 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(167): Illuminate\\Routing\\Router->dispatch()
+#23 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(128): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()
+#24 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/spondonit/lms-service/src/Middleware/LmsService.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#25 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): SpondonIt\\LmsService\\Middleware\\LmsService->handle()
+#26 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/livewire/livewire/src/DisableBrowserCache.php(19): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#27 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Livewire\\DisableBrowserCache->handle()
+#28 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/barryvdh/laravel-debugbar/src/Middleware/InjectDebugbar.php(66): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#29 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Barryvdh\\Debugbar\\Middleware\\InjectDebugbar->handle()
+#30 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#31 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#32 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle()
+#33 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#34 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#35 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle()
+#36 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#37 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle()
+#38 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(86): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#39 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle()
+#40 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/fruitcake/laravel-cors/src/HandleCors.php(52): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#41 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Fruitcake\\Cors\\HandleCors->handle()
+#42 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/fideloper/proxy/src/TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#43 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Fideloper\\Proxy\\TrustProxies->handle()
+#44 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(103): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#45 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(142): Illuminate\\Pipeline\\Pipeline->then()
+#46 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(111): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#47 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
+#48 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/server.php(21): require_once('...')
+#49 {main}
 "} 
-[2022-10-31 14:10:23] local.ERROR: include(/home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/composer/../../Modules/Appearance/Providers/AppearanceServiceProvider.php): Failed to open stream: No such file or directory {"exception":"[object] (ErrorException(code: 0): include(/home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/composer/../../Modules/Appearance/Providers/AppearanceServiceProvider.php): Failed to open stream: No such file or directory at /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/composer/ClassLoader.php:571)
+[2022-10-31 17:31:14] local.ERROR: View [frontend.infixlmstheme.auth.login] not found. {"exception":"[object] (InvalidArgumentException(code: 0): View [frontend.infixlmstheme.auth.login] not found. at /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/View/FileViewFinder.php:137)
 [stacktrace]
-#0 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/composer/ClassLoader.php(571): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
-#1 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/composer/ClassLoader.php(571): include()
-#2 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/composer/ClassLoader.php(428): Composer\\Autoload\\includeFile()
-#3 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(745): Composer\\Autoload\\ClassLoader->loadClass()
-#4 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(679): Illuminate\\Foundation\\Application->resolveProvider()
-#5 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php(75): Illuminate\\Foundation\\Application->register()
-#6 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/nwidart/laravel-modules/src/Laravel/Module.php(33): Illuminate\\Foundation\\ProviderRepository->load()
-#7 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/nwidart/laravel-modules/src/Module.php(264): Nwidart\\Modules\\Laravel\\Module->registerProviders()
-#8 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/nwidart/laravel-modules/src/FileRepository.php(321): Nwidart\\Modules\\Module->register()
-#9 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/nwidart/laravel-modules/src/Providers/BootstrapServiceProvider.php(23): Nwidart\\Modules\\FileRepository->register()
-#10 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(682): Nwidart\\Modules\\Providers\\BootstrapServiceProvider->register()
-#11 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/nwidart/laravel-modules/src/ModulesServiceProvider.php(31): Illuminate\\Foundation\\Application->register()
-#12 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/nwidart/laravel-modules/src/LaravelModulesServiceProvider.php(17): Nwidart\\Modules\\ModulesServiceProvider->registerModules()
-#13 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Nwidart\\Modules\\LaravelModulesServiceProvider->boot()
-#14 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
-#15 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
-#16 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
-#17 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call()
-#18 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(924): Illuminate\\Container\\Container->call()
-#19 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(905): Illuminate\\Foundation\\Application->bootProvider()
-#20 [internal function]: Illuminate\\Foundation\\Application->Illuminate\\Foundation\\{closure}()
-#21 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(906): array_walk()
-#22 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php(17): Illuminate\\Foundation\\Application->boot()
-#23 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(237): Illuminate\\Foundation\\Bootstrap\\BootProviders->bootstrap()
-#24 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(153): Illuminate\\Foundation\\Application->bootstrapWith()
-#25 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(137): Illuminate\\Foundation\\Http\\Kernel->bootstrap()
-#26 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(111): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
-#27 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
-#28 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/server.php(21): require_once('...')
-#29 {main}
+#0 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/View/FileViewFinder.php(79): Illuminate\\View\\FileViewFinder->findInPaths()
+#1 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/View/Factory.php(138): Illuminate\\View\\FileViewFinder->find()
+#2 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(932): Illuminate\\View\\Factory->make()
+#3 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/app/Http/Controllers/Auth/LoginController.php(326): view()
+#4 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): App\\Http\\Controllers\\Auth\\LoginController->showLoginForm()
+#5 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction()
+#6 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Route.php(262): Illuminate\\Routing\\ControllerDispatcher->dispatch()
+#7 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Route.php(205): Illuminate\\Routing\\Route->runController()
+#8 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(721): Illuminate\\Routing\\Route->run()
+#9 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(128): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}()
+#10 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/app/Http/Middleware/RedirectIfAuthenticated.php(40): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#11 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): App\\Http\\Middleware\\RedirectIfAuthenticated->handle()
+#12 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#13 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
+#14 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(127): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#15 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(63): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequest()
+#16 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle()
+#17 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(103): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#18 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(723): Illuminate\\Pipeline\\Pipeline->then()
+#19 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(698): Illuminate\\Routing\\Router->runRouteWithinStack()
+#20 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(662): Illuminate\\Routing\\Router->runRoute()
+#21 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(651): Illuminate\\Routing\\Router->dispatchToRoute()
+#22 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(167): Illuminate\\Routing\\Router->dispatch()
+#23 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(128): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()
+#24 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/spondonit/lms-service/src/Middleware/LmsService.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#25 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): SpondonIt\\LmsService\\Middleware\\LmsService->handle()
+#26 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/livewire/livewire/src/DisableBrowserCache.php(19): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#27 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Livewire\\DisableBrowserCache->handle()
+#28 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/barryvdh/laravel-debugbar/src/Middleware/InjectDebugbar.php(66): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#29 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Barryvdh\\Debugbar\\Middleware\\InjectDebugbar->handle()
+#30 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#31 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#32 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle()
+#33 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#34 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#35 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle()
+#36 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#37 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle()
+#38 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(86): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#39 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle()
+#40 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/fruitcake/laravel-cors/src/HandleCors.php(52): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#41 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Fruitcake\\Cors\\HandleCors->handle()
+#42 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/fideloper/proxy/src/TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#43 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Fideloper\\Proxy\\TrustProxies->handle()
+#44 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(103): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#45 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(142): Illuminate\\Pipeline\\Pipeline->then()
+#46 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(111): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#47 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
+#48 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/server.php(21): require_once('...')
+#49 {main}
+"} 
+[2022-10-31 17:31:59] local.ERROR: Undefined variable $errors (View: /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/resources/views/frontend/infixlmstheme/auth/login.blade.php) {"view":{"view":"/home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/resources/views/frontend/infixlmstheme/auth/login.blade.php","data":{"page":"<pre class=sf-dump id=sf-dump-636947057 data-indent-pad=\"  \"><span class=sf-dump-note>Modules\\FrontendManage\\Entities\\LoginPage</span> {<a class=sf-dump-ref>#2863</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">connection</span>: \"<span class=sf-dump-str title=\"5 characters\">mysql</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"11 characters\">login_pages</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+  +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+  #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+  +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+  +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>true</span>
+  +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:19</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>id</span>\" => <span class=sf-dump-num>1</span>
+    \"<span class=sf-dump-key>title</span>\" => \"<span class=sf-dump-str title=\"52 characters\">{&quot;en&quot;:&quot;Welcome to Infix Learning Management System&quot;}</span>\"
+    \"<span class=sf-dump-key>banner</span>\" => \"<span class=sf-dump-str title=\"51 characters\">public/frontend/infixlmstheme/img/banner/global.png</span>\"
+    \"<span class=sf-dump-key>slogans1</span>\" => \"<span class=sf-dump-str title=\"20 characters\">{&quot;en&quot;:&quot;Excellence.&quot;}</span>\"
+    \"<span class=sf-dump-key>slogans2</span>\" => \"<span class=sf-dump-str title=\"19 characters\">{&quot;en&quot;:&quot;Community.&quot;}</span>\"
+    \"<span class=sf-dump-key>slogans3</span>\" => \"<span class=sf-dump-str title=\"19 characters\">{&quot;en&quot;:&quot;Diversity.&quot;}</span>\"
+    \"<span class=sf-dump-key>created_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2022-10-30 02:59:36</span>\"
+    \"<span class=sf-dump-key>updated_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2022-10-30 02:59:36</span>\"
+    \"<span class=sf-dump-key>lms_id</span>\" => <span class=sf-dump-num>1</span>
+    \"<span class=sf-dump-key>reg_title</span>\" => \"<span class=sf-dump-str title=\"52 characters\">{&quot;en&quot;:&quot;Welcome to Infix Learning Management System&quot;}</span>\"
+    \"<span class=sf-dump-key>reg_banner</span>\" => \"<span class=sf-dump-str title=\"51 characters\">public/frontend/infixlmstheme/img/banner/global.png</span>\"
+    \"<span class=sf-dump-key>reg_slogans1</span>\" => \"<span class=sf-dump-str title=\"19 characters\">{&quot;en&quot;:&quot;Excellence&quot;}</span>\"
+    \"<span class=sf-dump-key>reg_slogans2</span>\" => \"<span class=sf-dump-str title=\"18 characters\">{&quot;en&quot;:&quot;Community&quot;}</span>\"
+    \"<span class=sf-dump-key>reg_slogans3</span>\" => \"<span class=sf-dump-str title=\"19 characters\">{&quot;en&quot;:&quot;Excellence&quot;}</span>\"
+    \"<span class=sf-dump-key>forget_title</span>\" => \"<span class=sf-dump-str title=\"52 characters\">{&quot;en&quot;:&quot;Welcome to Infix Learning Management System&quot;}</span>\"
+    \"<span class=sf-dump-key>forget_banner</span>\" => \"<span class=sf-dump-str title=\"51 characters\">public/frontend/infixlmstheme/img/banner/global.png</span>\"
+    \"<span class=sf-dump-key>forget_slogans1</span>\" => \"<span class=sf-dump-str title=\"19 characters\">{&quot;en&quot;:&quot;Excellence&quot;}</span>\"
+    \"<span class=sf-dump-key>forget_slogans2</span>\" => \"<span class=sf-dump-str title=\"18 characters\">{&quot;en&quot;:&quot;Community&quot;}</span>\"
+    \"<span class=sf-dump-key>forget_slogans3</span>\" => \"<span class=sf-dump-str title=\"19 characters\">{&quot;en&quot;:&quot;Excellence&quot;}</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">original</span>: <span class=sf-dump-note>array:19</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>id</span>\" => <span class=sf-dump-num>1</span>
+    \"<span class=sf-dump-key>title</span>\" => \"<span class=sf-dump-str title=\"52 characters\">{&quot;en&quot;:&quot;Welcome to Infix Learning Management System&quot;}</span>\"
+    \"<span class=sf-dump-key>banner</span>\" => \"<span class=sf-dump-str title=\"51 characters\">public/frontend/infixlmstheme/img/banner/global.png</span>\"
+    \"<span class=sf-dump-key>slogans1</span>\" => \"<span class=sf-dump-str title=\"20 characters\">{&quot;en&quot;:&quot;Excellence.&quot;}</span>\"
+    \"<span class=sf-dump-key>slogans2</span>\" => \"<span class=sf-dump-str title=\"19 characters\">{&quot;en&quot;:&quot;Community.&quot;}</span>\"
+    \"<span class=sf-dump-key>slogans3</span>\" => \"<span class=sf-dump-str title=\"19 characters\">{&quot;en&quot;:&quot;Diversity.&quot;}</span>\"
+    \"<span class=sf-dump-key>created_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2022-10-30 02:59:36</span>\"
+    \"<span class=sf-dump-key>updated_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2022-10-30 02:59:36</span>\"
+    \"<span class=sf-dump-key>lms_id</span>\" => <span class=sf-dump-num>1</span>
+    \"<span class=sf-dump-key>reg_title</span>\" => \"<span class=sf-dump-str title=\"52 characters\">{&quot;en&quot;:&quot;Welcome to Infix Learning Management System&quot;}</span>\"
+    \"<span class=sf-dump-key>reg_banner</span>\" => \"<span class=sf-dump-str title=\"51 characters\">public/frontend/infixlmstheme/img/banner/global.png</span>\"
+    \"<span class=sf-dump-key>reg_slogans1</span>\" => \"<span class=sf-dump-str title=\"19 characters\">{&quot;en&quot;:&quot;Excellence&quot;}</span>\"
+    \"<span class=sf-dump-key>reg_slogans2</span>\" => \"<span class=sf-dump-str title=\"18 characters\">{&quot;en&quot;:&quot;Community&quot;}</span>\"
+    \"<span class=sf-dump-key>reg_slogans3</span>\" => \"<span class=sf-dump-str title=\"19 characters\">{&quot;en&quot;:&quot;Excellence&quot;}</span>\"
+    \"<span class=sf-dump-key>forget_title</span>\" => \"<span class=sf-dump-str title=\"52 characters\">{&quot;en&quot;:&quot;Welcome to Infix Learning Management System&quot;}</span>\"
+    \"<span class=sf-dump-key>forget_banner</span>\" => \"<span class=sf-dump-str title=\"51 characters\">public/frontend/infixlmstheme/img/banner/global.png</span>\"
+    \"<span class=sf-dump-key>forget_slogans1</span>\" => \"<span class=sf-dump-str title=\"19 characters\">{&quot;en&quot;:&quot;Excellence&quot;}</span>\"
+    \"<span class=sf-dump-key>forget_slogans2</span>\" => \"<span class=sf-dump-str title=\"18 characters\">{&quot;en&quot;:&quot;Community&quot;}</span>\"
+    \"<span class=sf-dump-key>forget_slogans3</span>\" => \"<span class=sf-dump-str title=\"19 characters\">{&quot;en&quot;:&quot;Excellence&quot;}</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">casts</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">dates</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: <span class=sf-dump-const>null</span>
+  #<span class=sf-dump-protected title=\"Protected property\">appends</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">relations</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+  +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>true</span>
+  #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => \"<span class=sf-dump-str>*</span>\"
+  </samp>]
+  +<span class=sf-dump-public title=\"Public property\">translatable</span>: <span class=sf-dump-note>array:12</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => \"<span class=sf-dump-str title=\"5 characters\">title</span>\"
+    <span class=sf-dump-index>1</span> => \"<span class=sf-dump-str title=\"8 characters\">slogans1</span>\"
+    <span class=sf-dump-index>2</span> => \"<span class=sf-dump-str title=\"8 characters\">slogans2</span>\"
+    <span class=sf-dump-index>3</span> => \"<span class=sf-dump-str title=\"8 characters\">slogans3</span>\"
+    <span class=sf-dump-index>4</span> => \"<span class=sf-dump-str title=\"9 characters\">reg_title</span>\"
+    <span class=sf-dump-index>5</span> => \"<span class=sf-dump-str title=\"12 characters\">reg_slogans1</span>\"
+    <span class=sf-dump-index>6</span> => \"<span class=sf-dump-str title=\"12 characters\">reg_slogans2</span>\"
+    <span class=sf-dump-index>7</span> => \"<span class=sf-dump-str title=\"12 characters\">reg_slogans3</span>\"
+    <span class=sf-dump-index>8</span> => \"<span class=sf-dump-str title=\"12 characters\">forget_title</span>\"
+    <span class=sf-dump-index>9</span> => \"<span class=sf-dump-str title=\"15 characters\">forget_slogans1</span>\"
+    <span class=sf-dump-index>10</span> => \"<span class=sf-dump-str title=\"15 characters\">forget_slogans2</span>\"
+    <span class=sf-dump-index>11</span> => \"<span class=sf-dump-str title=\"15 characters\">forget_slogans3</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">translationLocale</span>: <span class=sf-dump-const>null</span>
+</samp>}
+</pre><script>Sfdump(\"sf-dump-636947057\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","homeContent":"<pre class=sf-dump id=sf-dump-277624161 data-indent-pad=\"  \">{<a class=sf-dump-ref>#3012</a><samp data-depth=1 class=sf-dump-expanded>
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">slider_title</span>\": \"<span class=sf-dump-str title=\"49 characters\">For every student, every classroom. Real results.</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">slider_text</span>\": \"<span class=sf-dump-str title=\"103 characters\">Build skills with courses, certificates, and degrees online from world-class universities and companies</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">testimonial_title</span>\": \"<span class=sf-dump-str title=\"28 characters\">What Our Student Have To Say</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">active_status</span>\": \"<span class=sf-dump-str>1</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">created_by</span>\": \"<span class=sf-dump-str>1</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">updated_by</span>\": \"<span class=sf-dump-str>1</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">category_title</span>\": \"<span class=sf-dump-str title=\"56 characters\">Find videos courses on almost any topic to build career.</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">category_sub_title</span>\": \"<span class=sf-dump-str title=\"56 characters\">Enjoy lifetime access to courses on our website and app.</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">instructor_banner</span>\": \"<span class=sf-dump-str title=\"51 characters\">public/frontend/infixlmstheme/img/banner/cta_bg.jpg</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">instructor_title</span>\": \"<span class=sf-dump-str title=\"41 characters\">Limitless learning and more possibilities</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">instructor_sub_title</span>\": \"<span class=sf-dump-str title=\"54 characters\">Choose from over 100,000 online video courses with new</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">course_title</span>\": \"<span class=sf-dump-str title=\"18 characters\">Top Online Courses</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">course_sub_title</span>\": \"<span class=sf-dump-str title=\"122 characters\">The world&#8217;s largest selection of courses choose from 130,000 online video courses with new additions published every month</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">best_category_banner</span>\": \"<span class=sf-dump-str title=\"55 characters\">public/frontend/infixlmstheme/img/banner/backage_bg.jpg</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">best_category_title</span>\": \"<span class=sf-dump-str title=\"48 characters\">Online Learning from the World&#8217;s best categories</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">best_category_sub_title</span>\": \"<span class=sf-dump-str title=\"86 characters\">Choose from over 100,000 online video courses with new additions published every month</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">quiz_title</span>\": \"<span class=sf-dump-str title=\"23 characters\">Explore popular Quizzes</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">testimonial_sub_title</span>\": \"<span class=sf-dump-str title=\"122 characters\">The world&#8217;s largest selection of courses choose from 130,000 online video courses with new additions published every month</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">article_title</span>\": \"<span class=sf-dump-str title=\"15 characters\">Articles &amp; News</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">article_sub_title</span>\": \"<span class=sf-dump-str title=\"122 characters\">The world&#8217;s largest selection of courses choose from 130,000 online video courses with new additions published every month</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">subscribe_logo</span>\": \"<span class=sf-dump-str title=\"42 characters\">public/frontend/infixlmstheme/img/book.png</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">subscribe_title</span>\": \"<span class=sf-dump-str title=\"36 characters\">Keep up to date &#8212; Get e-mail updates</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">subscribe_sub_title</span>\": \"<span class=sf-dump-str title=\"39 characters\">Stay tuned for the latest company news.</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">course_page_title</span>\": \"<span class=sf-dump-str title=\"7 characters\">Courses</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">course_page_sub_title</span>\": \"<span class=sf-dump-str title=\"38 characters\">Join the Millions for better learning.</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">course_page_banner</span>\": \"<span class=sf-dump-str title=\"57 characters\">public/frontend/infixlmstheme/img/banner/bradcam_bg_1.jpg</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">class_page_title</span>\": \"<span class=sf-dump-str title=\"7 characters\">Classes</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">class_page_sub_title</span>\": \"<span class=sf-dump-str title=\"38 characters\">Join the Millions for better learning.</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">class_page_banner</span>\": \"<span class=sf-dump-str title=\"57 characters\">public/frontend/infixlmstheme/img/banner/bradcam_bg_2.jpg</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">quiz_page_title</span>\": \"<span class=sf-dump-str title=\"7 characters\">Quizzes</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">quiz_page_sub_title</span>\": \"<span class=sf-dump-str title=\"38 characters\">Join the Millions for better learning.</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">quiz_page_banner</span>\": \"<span class=sf-dump-str title=\"57 characters\">public/frontend/infixlmstheme/img/banner/bradcam_bg_3.jpg</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">instructor_page_title</span>\": \"<span class=sf-dump-str title=\"10 characters\">Instructor</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">instructor_page_sub_title</span>\": \"<span class=sf-dump-str title=\"36 characters\">Start your education Career with us.</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">instructor_page_banner</span>\": \"<span class=sf-dump-str title=\"57 characters\">public/frontend/infixlmstheme/img/banner/bradcam_bg_4.jpg</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">contact_page_title</span>\": \"<span class=sf-dump-str title=\"10 characters\">Contact Us</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">contact_sub_title</span>\": \"<span class=sf-dump-str title=\"35 characters\">We&#8217;re here with you every step way!</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">contact_page_banner</span>\": \"<span class=sf-dump-str title=\"57 characters\">public/frontend/infixlmstheme/img/banner/bradcam_bg_5.jpg</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">about_page_title</span>\": \"<span class=sf-dump-str title=\"13 characters\">About Company</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">about_sub_title</span>\": \"<span class=sf-dump-str title=\"31 characters\">The leading global marketplace.</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">about_page_banner</span>\": \"<span class=sf-dump-str title=\"57 characters\">public/frontend/infixlmstheme/img/banner/bradcam_bg_6.jpg</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">become_instructor_title</span>\": \"<span class=sf-dump-str title=\"20 characters\">Become a Instructor.</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">become_instructor_sub_title</span>\": \"<span class=sf-dump-str title=\"71 characters\">Teach what you love. Corrector gives you the tools to create a course .</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">become_instructor_logo</span>\": \"<span class=sf-dump-str title=\"48 characters\">public/frontend/infixlmstheme/img/services/1.png</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">slider_banner</span>\": \"<span class=sf-dump-str title=\"51 characters\">public/frontend/infixlmstheme/img/banner/banner.jpg</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">show_key_feature</span>\": \"<span class=sf-dump-str>1</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">key_feature_title1</span>\": \"<span class=sf-dump-str title=\"19 characters\">50K+ Online Courses</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">key_feature_subtitle1</span>\": \"<span class=sf-dump-str title=\"32 characters\">Enjoy lifetime access to courses</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">key_feature_logo1</span>\": \"<span class=sf-dump-str title=\"50 characters\">public/frontend/infixlmstheme/img/svg/course_1.svg</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">key_feature_link1</span>\": \"\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">key_feature_title2</span>\": \"<span class=sf-dump-str title=\"17 characters\">Teacher directory</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">key_feature_subtitle2</span>\": \"<span class=sf-dump-str title=\"27 characters\">Learn from industry experts</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">key_feature_logo2</span>\": \"<span class=sf-dump-str title=\"50 characters\">public/frontend/infixlmstheme/img/svg/course_2.svg</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">key_feature_link2</span>\": \"\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">key_feature_title3</span>\": \"<span class=sf-dump-str title=\"16 characters\">Unlimited access</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">key_feature_subtitle3</span>\": \"<span class=sf-dump-str title=\"22 characters\">Learn on your schedule</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">key_feature_logo3</span>\": \"<span class=sf-dump-str title=\"50 characters\">public/frontend/infixlmstheme/img/svg/course_3.svg</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">key_feature_link3</span>\": \"\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">become_instructor_page_banner</span>\": \"<span class=sf-dump-str title=\"51 characters\">public/frontend/infixlmstheme/img/banner/cta_bg.jpg</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">become_instructor_page_title</span>\": \"<span class=sf-dump-str title=\"41 characters\">Limitless learning and more possibilities</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">become_instructor_page_sub_title</span>\": \"<span class=sf-dump-str title=\"54 characters\">Choose from over 100,000 online video courses with new</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">lms_id</span>\": \"<span class=sf-dump-str>1</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">blog_page_banner</span>\": \"<span class=sf-dump-str title=\"51 characters\">public/frontend/infixlmstheme/img/banner/cta_bg.jpg</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">blog_page_title</span>\": \"<span class=sf-dump-str title=\"41 characters\">Limitless learning and more possibilities</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">blog_page_sub_title</span>\": \"<span class=sf-dump-str title=\"54 characters\">Choose from over 100,000 online video courses with new</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">maintenance_banner</span>\": \"<span class=sf-dump-str title=\"56 characters\">public/frontend/infixlmstheme/img/banner/maintenance.jpg</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">maintenance_title</span>\": \"<span class=sf-dump-str title=\"21 characters\">We will be back soon!</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">maintenance_sub_title</span>\": \"<span class=sf-dump-str title=\"86 characters\">Sorry for the inconvenience but we&amp;rsquo;re performing some maintenance at the moment.</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">maintenance_status</span>\": \"<span class=sf-dump-str>0</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">banner_logo</span>\": \"<span class=sf-dump-str title=\"41 characters\">public/frontend/edume/img/banner/logo.svg</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">show_banner_section</span>\": \"<span class=sf-dump-str>1</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">show_category_section</span>\": \"<span class=sf-dump-str>1</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">show_instructor_section</span>\": \"<span class=sf-dump-str>1</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">show_course_section</span>\": \"<span class=sf-dump-str>1</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">show_best_category_section</span>\": \"<span class=sf-dump-str>1</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">show_quiz_section</span>\": \"<span class=sf-dump-str>1</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">show_testimonial_section</span>\": \"<span class=sf-dump-str>1</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">show_article_section</span>\": \"<span class=sf-dump-str>1</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">show_subscribe_section</span>\": \"<span class=sf-dump-str>1</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">show_become_instructor_section</span>\": \"<span class=sf-dump-str>1</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">show_sponsor_section</span>\": \"<span class=sf-dump-str>1</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">show_menu_search_box</span>\": \"<span class=sf-dump-str>1</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">show_banner_search_box</span>\": \"<span class=sf-dump-str>1</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">show_map</span>\": \"<span class=sf-dump-str>1</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">show_subscription_plan</span>\": \"<span class=sf-dump-str>1</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">subscription_title</span>\": \"<span class=sf-dump-str title=\"22 characters\">Pricing Plan &amp; Package</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">subscription_sub_title</span>\": \"<span class=sf-dump-str title=\"54 characters\">Choose from over 100,000 online video courses with new</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">show_live_class_section</span>\": \"<span class=sf-dump-str>1</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">live_class_title</span>\": \"<span class=sf-dump-str title=\"28 characters\">Explore popular Live Classes</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">show_about_lms_section</span>\": \"<span class=sf-dump-str>1</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">about_lms_header</span>\": \"<span class=sf-dump-str title=\"9 characters\">About LMS</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">about_lms</span>\": \"\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">quiz_sub_title</span>\": \"<span class=sf-dump-str title=\"152 characters\">You don&#8217;t need to be a designer or have any previous of experience with design to take Quillow classes. You just need curiosity and the desire to learn.</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">live_class_sub_title</span>\": \"<span class=sf-dump-str title=\"152 characters\">You don&#8217;t need to be a designer or have any previous of experience with design to take Quillow classes. You just need curiosity and the desire to learn.</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">sponsor_title</span>\": \"<span class=sf-dump-str title=\"33 characters\">Trusted by companies of all sizes</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">sponsor_sub_title</span>\": \"<span class=sf-dump-str title=\"73 characters\">Thousands of students already add more focus to their work with InfixLMS.</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">contact_page_body_image</span>\": \"\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">contact_page_content_title</span>\": \"<span class=sf-dump-str title=\"27 characters\">Want to become an educator?</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">contact_page_content_details</span>\": \"<span class=sf-dump-str title=\"313 characters\">Areana ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">contact_page_phone</span>\": \"<span class=sf-dump-str title=\"39 characters\">public/frontend/edume/img/lms_cat/1.png</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">contact_page_email</span>\": \"<span class=sf-dump-str title=\"39 characters\">public/frontend/edume/img/lms_cat/2.png</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">contact_page_address</span>\": \"<span class=sf-dump-str title=\"39 characters\">public/frontend/edume/img/lms_cat/3.png</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">how_to_buy_title1</span>\": \"<span class=sf-dump-str title=\"6 characters\">Step 1</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">how_to_buy_details1</span>\": \"<span class=sf-dump-str title=\"33 characters\">Trusted by companies of all sizes</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">how_to_buy_logo1</span>\": \"<span class=sf-dump-str title=\"28 characters\">public/demo/how_to_buy/1.png</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">how_to_buy_title2</span>\": \"<span class=sf-dump-str title=\"6 characters\">Step 2</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">how_to_buy_details2</span>\": \"<span class=sf-dump-str title=\"33 characters\">Trusted by companies of all sizes</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">how_to_buy_logo2</span>\": \"<span class=sf-dump-str title=\"28 characters\">public/demo/how_to_buy/2.png</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">how_to_buy_title3</span>\": \"<span class=sf-dump-str title=\"6 characters\">Step 3</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">how_to_buy_details3</span>\": \"<span class=sf-dump-str title=\"33 characters\">Trusted by companies of all sizes</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">how_to_buy_logo3</span>\": \"<span class=sf-dump-str title=\"28 characters\">public/demo/how_to_buy/3.png</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">how_to_buy_title4</span>\": \"<span class=sf-dump-str title=\"6 characters\">Step 4</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">how_to_buy_details4</span>\": \"<span class=sf-dump-str title=\"33 characters\">Trusted by companies of all sizes</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">how_to_buy_logo4</span>\": \"<span class=sf-dump-str title=\"28 characters\">public/demo/how_to_buy/4.png</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">show_how_to_buy</span>\": \"<span class=sf-dump-str>0</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">how_to_buy_title</span>\": \"<span class=sf-dump-str title=\"10 characters\">How To Buy</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">how_to_buy_sub_title</span>\": \"<span class=sf-dump-str title=\"103 characters\">The easiest way to buy stocks is through an online stockbroker. After opening and funding your account.</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">offer_page_banner</span>\": \"<span class=sf-dump-str title=\"51 characters\">public/frontend/infixlmstheme/img/banner/cta_bg.jpg</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">offer_page_title</span>\": \"<span class=sf-dump-str title=\"10 characters\">Offer Page</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">offer_page_sub_title</span>\": \"<span class=sf-dump-str title=\"41 characters\">Limitless learning and more possibilities</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">home_page_faq_title</span>\": \"<span class=sf-dump-str title=\"3 characters\">FAQ</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">show_home_page_faq</span>\": \"<span class=sf-dump-str>0</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">home_page_faq_sub_title</span>\": \"<span class=sf-dump-str title=\"29 characters\">Some common question &amp; answer</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">saas_title</span>\": \"<span class=sf-dump-str title=\"10 characters\">Saas Plans</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">saas_sub_title</span>\": \"<span class=sf-dump-str title=\"30 characters\">Buy Saas Plan For Single Price</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">saas_banner</span>\": \"<span class=sf-dump-str title=\"57 characters\">public/frontend/infixlmstheme/img/banner/bradcam_bg_1.jpg</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">homepage_block_positions</span>\": \"\"
+</samp>}
+</pre><script>Sfdump(\"sf-dump-277624161\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","frontendContent":"<pre class=sf-dump id=sf-dump-1658706349 data-indent-pad=\"  \">{<a class=sf-dump-ref>#3012</a><samp data-depth=1 class=sf-dump-expanded>
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">slider_title</span>\": \"<span class=sf-dump-str title=\"49 characters\">For every student, every classroom. Real results.</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">slider_text</span>\": \"<span class=sf-dump-str title=\"103 characters\">Build skills with courses, certificates, and degrees online from world-class universities and companies</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">testimonial_title</span>\": \"<span class=sf-dump-str title=\"28 characters\">What Our Student Have To Say</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">active_status</span>\": \"<span class=sf-dump-str>1</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">created_by</span>\": \"<span class=sf-dump-str>1</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">updated_by</span>\": \"<span class=sf-dump-str>1</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">category_title</span>\": \"<span class=sf-dump-str title=\"56 characters\">Find videos courses on almost any topic to build career.</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">category_sub_title</span>\": \"<span class=sf-dump-str title=\"56 characters\">Enjoy lifetime access to courses on our website and app.</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">instructor_banner</span>\": \"<span class=sf-dump-str title=\"51 characters\">public/frontend/infixlmstheme/img/banner/cta_bg.jpg</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">instructor_title</span>\": \"<span class=sf-dump-str title=\"41 characters\">Limitless learning and more possibilities</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">instructor_sub_title</span>\": \"<span class=sf-dump-str title=\"54 characters\">Choose from over 100,000 online video courses with new</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">course_title</span>\": \"<span class=sf-dump-str title=\"18 characters\">Top Online Courses</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">course_sub_title</span>\": \"<span class=sf-dump-str title=\"122 characters\">The world&#8217;s largest selection of courses choose from 130,000 online video courses with new additions published every month</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">best_category_banner</span>\": \"<span class=sf-dump-str title=\"55 characters\">public/frontend/infixlmstheme/img/banner/backage_bg.jpg</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">best_category_title</span>\": \"<span class=sf-dump-str title=\"48 characters\">Online Learning from the World&#8217;s best categories</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">best_category_sub_title</span>\": \"<span class=sf-dump-str title=\"86 characters\">Choose from over 100,000 online video courses with new additions published every month</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">quiz_title</span>\": \"<span class=sf-dump-str title=\"23 characters\">Explore popular Quizzes</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">testimonial_sub_title</span>\": \"<span class=sf-dump-str title=\"122 characters\">The world&#8217;s largest selection of courses choose from 130,000 online video courses with new additions published every month</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">article_title</span>\": \"<span class=sf-dump-str title=\"15 characters\">Articles &amp; News</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">article_sub_title</span>\": \"<span class=sf-dump-str title=\"122 characters\">The world&#8217;s largest selection of courses choose from 130,000 online video courses with new additions published every month</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">subscribe_logo</span>\": \"<span class=sf-dump-str title=\"42 characters\">public/frontend/infixlmstheme/img/book.png</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">subscribe_title</span>\": \"<span class=sf-dump-str title=\"36 characters\">Keep up to date &#8212; Get e-mail updates</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">subscribe_sub_title</span>\": \"<span class=sf-dump-str title=\"39 characters\">Stay tuned for the latest company news.</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">course_page_title</span>\": \"<span class=sf-dump-str title=\"7 characters\">Courses</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">course_page_sub_title</span>\": \"<span class=sf-dump-str title=\"38 characters\">Join the Millions for better learning.</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">course_page_banner</span>\": \"<span class=sf-dump-str title=\"57 characters\">public/frontend/infixlmstheme/img/banner/bradcam_bg_1.jpg</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">class_page_title</span>\": \"<span class=sf-dump-str title=\"7 characters\">Classes</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">class_page_sub_title</span>\": \"<span class=sf-dump-str title=\"38 characters\">Join the Millions for better learning.</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">class_page_banner</span>\": \"<span class=sf-dump-str title=\"57 characters\">public/frontend/infixlmstheme/img/banner/bradcam_bg_2.jpg</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">quiz_page_title</span>\": \"<span class=sf-dump-str title=\"7 characters\">Quizzes</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">quiz_page_sub_title</span>\": \"<span class=sf-dump-str title=\"38 characters\">Join the Millions for better learning.</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">quiz_page_banner</span>\": \"<span class=sf-dump-str title=\"57 characters\">public/frontend/infixlmstheme/img/banner/bradcam_bg_3.jpg</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">instructor_page_title</span>\": \"<span class=sf-dump-str title=\"10 characters\">Instructor</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">instructor_page_sub_title</span>\": \"<span class=sf-dump-str title=\"36 characters\">Start your education Career with us.</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">instructor_page_banner</span>\": \"<span class=sf-dump-str title=\"57 characters\">public/frontend/infixlmstheme/img/banner/bradcam_bg_4.jpg</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">contact_page_title</span>\": \"<span class=sf-dump-str title=\"10 characters\">Contact Us</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">contact_sub_title</span>\": \"<span class=sf-dump-str title=\"35 characters\">We&#8217;re here with you every step way!</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">contact_page_banner</span>\": \"<span class=sf-dump-str title=\"57 characters\">public/frontend/infixlmstheme/img/banner/bradcam_bg_5.jpg</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">about_page_title</span>\": \"<span class=sf-dump-str title=\"13 characters\">About Company</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">about_sub_title</span>\": \"<span class=sf-dump-str title=\"31 characters\">The leading global marketplace.</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">about_page_banner</span>\": \"<span class=sf-dump-str title=\"57 characters\">public/frontend/infixlmstheme/img/banner/bradcam_bg_6.jpg</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">become_instructor_title</span>\": \"<span class=sf-dump-str title=\"20 characters\">Become a Instructor.</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">become_instructor_sub_title</span>\": \"<span class=sf-dump-str title=\"71 characters\">Teach what you love. Corrector gives you the tools to create a course .</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">become_instructor_logo</span>\": \"<span class=sf-dump-str title=\"48 characters\">public/frontend/infixlmstheme/img/services/1.png</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">slider_banner</span>\": \"<span class=sf-dump-str title=\"51 characters\">public/frontend/infixlmstheme/img/banner/banner.jpg</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">show_key_feature</span>\": \"<span class=sf-dump-str>1</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">key_feature_title1</span>\": \"<span class=sf-dump-str title=\"19 characters\">50K+ Online Courses</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">key_feature_subtitle1</span>\": \"<span class=sf-dump-str title=\"32 characters\">Enjoy lifetime access to courses</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">key_feature_logo1</span>\": \"<span class=sf-dump-str title=\"50 characters\">public/frontend/infixlmstheme/img/svg/course_1.svg</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">key_feature_link1</span>\": \"\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">key_feature_title2</span>\": \"<span class=sf-dump-str title=\"17 characters\">Teacher directory</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">key_feature_subtitle2</span>\": \"<span class=sf-dump-str title=\"27 characters\">Learn from industry experts</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">key_feature_logo2</span>\": \"<span class=sf-dump-str title=\"50 characters\">public/frontend/infixlmstheme/img/svg/course_2.svg</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">key_feature_link2</span>\": \"\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">key_feature_title3</span>\": \"<span class=sf-dump-str title=\"16 characters\">Unlimited access</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">key_feature_subtitle3</span>\": \"<span class=sf-dump-str title=\"22 characters\">Learn on your schedule</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">key_feature_logo3</span>\": \"<span class=sf-dump-str title=\"50 characters\">public/frontend/infixlmstheme/img/svg/course_3.svg</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">key_feature_link3</span>\": \"\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">become_instructor_page_banner</span>\": \"<span class=sf-dump-str title=\"51 characters\">public/frontend/infixlmstheme/img/banner/cta_bg.jpg</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">become_instructor_page_title</span>\": \"<span class=sf-dump-str title=\"41 characters\">Limitless learning and more possibilities</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">become_instructor_page_sub_title</span>\": \"<span class=sf-dump-str title=\"54 characters\">Choose from over 100,000 online video courses with new</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">lms_id</span>\": \"<span class=sf-dump-str>1</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">blog_page_banner</span>\": \"<span class=sf-dump-str title=\"51 characters\">public/frontend/infixlmstheme/img/banner/cta_bg.jpg</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">blog_page_title</span>\": \"<span class=sf-dump-str title=\"41 characters\">Limitless learning and more possibilities</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">blog_page_sub_title</span>\": \"<span class=sf-dump-str title=\"54 characters\">Choose from over 100,000 online video courses with new</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">maintenance_banner</span>\": \"<span class=sf-dump-str title=\"56 characters\">public/frontend/infixlmstheme/img/banner/maintenance.jpg</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">maintenance_title</span>\": \"<span class=sf-dump-str title=\"21 characters\">We will be back soon!</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">maintenance_sub_title</span>\": \"<span class=sf-dump-str title=\"86 characters\">Sorry for the inconvenience but we&amp;rsquo;re performing some maintenance at the moment.</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">maintenance_status</span>\": \"<span class=sf-dump-str>0</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">banner_logo</span>\": \"<span class=sf-dump-str title=\"41 characters\">public/frontend/edume/img/banner/logo.svg</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">show_banner_section</span>\": \"<span class=sf-dump-str>1</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">show_category_section</span>\": \"<span class=sf-dump-str>1</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">show_instructor_section</span>\": \"<span class=sf-dump-str>1</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">show_course_section</span>\": \"<span class=sf-dump-str>1</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">show_best_category_section</span>\": \"<span class=sf-dump-str>1</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">show_quiz_section</span>\": \"<span class=sf-dump-str>1</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">show_testimonial_section</span>\": \"<span class=sf-dump-str>1</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">show_article_section</span>\": \"<span class=sf-dump-str>1</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">show_subscribe_section</span>\": \"<span class=sf-dump-str>1</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">show_become_instructor_section</span>\": \"<span class=sf-dump-str>1</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">show_sponsor_section</span>\": \"<span class=sf-dump-str>1</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">show_menu_search_box</span>\": \"<span class=sf-dump-str>1</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">show_banner_search_box</span>\": \"<span class=sf-dump-str>1</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">show_map</span>\": \"<span class=sf-dump-str>1</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">show_subscription_plan</span>\": \"<span class=sf-dump-str>1</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">subscription_title</span>\": \"<span class=sf-dump-str title=\"22 characters\">Pricing Plan &amp; Package</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">subscription_sub_title</span>\": \"<span class=sf-dump-str title=\"54 characters\">Choose from over 100,000 online video courses with new</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">show_live_class_section</span>\": \"<span class=sf-dump-str>1</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">live_class_title</span>\": \"<span class=sf-dump-str title=\"28 characters\">Explore popular Live Classes</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">show_about_lms_section</span>\": \"<span class=sf-dump-str>1</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">about_lms_header</span>\": \"<span class=sf-dump-str title=\"9 characters\">About LMS</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">about_lms</span>\": \"\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">quiz_sub_title</span>\": \"<span class=sf-dump-str title=\"152 characters\">You don&#8217;t need to be a designer or have any previous of experience with design to take Quillow classes. You just need curiosity and the desire to learn.</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">live_class_sub_title</span>\": \"<span class=sf-dump-str title=\"152 characters\">You don&#8217;t need to be a designer or have any previous of experience with design to take Quillow classes. You just need curiosity and the desire to learn.</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">sponsor_title</span>\": \"<span class=sf-dump-str title=\"33 characters\">Trusted by companies of all sizes</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">sponsor_sub_title</span>\": \"<span class=sf-dump-str title=\"73 characters\">Thousands of students already add more focus to their work with InfixLMS.</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">contact_page_body_image</span>\": \"\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">contact_page_content_title</span>\": \"<span class=sf-dump-str title=\"27 characters\">Want to become an educator?</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">contact_page_content_details</span>\": \"<span class=sf-dump-str title=\"313 characters\">Areana ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">contact_page_phone</span>\": \"<span class=sf-dump-str title=\"39 characters\">public/frontend/edume/img/lms_cat/1.png</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">contact_page_email</span>\": \"<span class=sf-dump-str title=\"39 characters\">public/frontend/edume/img/lms_cat/2.png</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">contact_page_address</span>\": \"<span class=sf-dump-str title=\"39 characters\">public/frontend/edume/img/lms_cat/3.png</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">how_to_buy_title1</span>\": \"<span class=sf-dump-str title=\"6 characters\">Step 1</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">how_to_buy_details1</span>\": \"<span class=sf-dump-str title=\"33 characters\">Trusted by companies of all sizes</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">how_to_buy_logo1</span>\": \"<span class=sf-dump-str title=\"28 characters\">public/demo/how_to_buy/1.png</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">how_to_buy_title2</span>\": \"<span class=sf-dump-str title=\"6 characters\">Step 2</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">how_to_buy_details2</span>\": \"<span class=sf-dump-str title=\"33 characters\">Trusted by companies of all sizes</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">how_to_buy_logo2</span>\": \"<span class=sf-dump-str title=\"28 characters\">public/demo/how_to_buy/2.png</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">how_to_buy_title3</span>\": \"<span class=sf-dump-str title=\"6 characters\">Step 3</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">how_to_buy_details3</span>\": \"<span class=sf-dump-str title=\"33 characters\">Trusted by companies of all sizes</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">how_to_buy_logo3</span>\": \"<span class=sf-dump-str title=\"28 characters\">public/demo/how_to_buy/3.png</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">how_to_buy_title4</span>\": \"<span class=sf-dump-str title=\"6 characters\">Step 4</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">how_to_buy_details4</span>\": \"<span class=sf-dump-str title=\"33 characters\">Trusted by companies of all sizes</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">how_to_buy_logo4</span>\": \"<span class=sf-dump-str title=\"28 characters\">public/demo/how_to_buy/4.png</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">show_how_to_buy</span>\": \"<span class=sf-dump-str>0</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">how_to_buy_title</span>\": \"<span class=sf-dump-str title=\"10 characters\">How To Buy</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">how_to_buy_sub_title</span>\": \"<span class=sf-dump-str title=\"103 characters\">The easiest way to buy stocks is through an online stockbroker. After opening and funding your account.</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">offer_page_banner</span>\": \"<span class=sf-dump-str title=\"51 characters\">public/frontend/infixlmstheme/img/banner/cta_bg.jpg</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">offer_page_title</span>\": \"<span class=sf-dump-str title=\"10 characters\">Offer Page</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">offer_page_sub_title</span>\": \"<span class=sf-dump-str title=\"41 characters\">Limitless learning and more possibilities</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">home_page_faq_title</span>\": \"<span class=sf-dump-str title=\"3 characters\">FAQ</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">show_home_page_faq</span>\": \"<span class=sf-dump-str>0</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">home_page_faq_sub_title</span>\": \"<span class=sf-dump-str title=\"29 characters\">Some common question &amp; answer</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">saas_title</span>\": \"<span class=sf-dump-str title=\"10 characters\">Saas Plans</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">saas_sub_title</span>\": \"<span class=sf-dump-str title=\"30 characters\">Buy Saas Plan For Single Price</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">saas_banner</span>\": \"<span class=sf-dump-str title=\"57 characters\">public/frontend/infixlmstheme/img/banner/bradcam_bg_1.jpg</span>\"
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">homepage_block_positions</span>\": \"\"
+</samp>}
+</pre><script>Sfdump(\"sf-dump-1658706349\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+"}},"exception":"[object] (Facade\\Ignition\\Exceptions\\ViewException(code: 0): Undefined variable $errors (View: /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/resources/views/frontend/infixlmstheme/auth/login.blade.php) at /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/resources/views/frontend/infixlmstheme/auth/login.blade.php:53)
+[stacktrace]
+#0 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/resources/views/frontend/infixlmstheme/auth/login.blade.php(53): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
+#1 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(107): require('...')
+#2 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(108): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#3 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire()
+#4 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/livewire/livewire/src/ComponentConcerns/RendersLivewireComponents.php(69): Illuminate\\View\\Engines\\PhpEngine->evaluatePath()
+#5 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(61): Livewire\\CompilerEngineForIgnition->evaluatePath()
+#6 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/facade/ignition/src/Views/Engines/CompilerEngine.php(37): Illuminate\\View\\Engines\\CompilerEngine->get()
+#7 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/livewire/livewire/src/ComponentConcerns/RendersLivewireComponents.php(35): Facade\\Ignition\\Views\\Engines\\CompilerEngine->get()
+#8 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/View/View.php(139): Livewire\\CompilerEngineForIgnition->get()
+#9 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/View/View.php(122): Illuminate\\View\\View->getContents()
+#10 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/View/View.php(91): Illuminate\\View\\View->renderContents()
+#11 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Http/Response.php(69): Illuminate\\View\\View->render()
+#12 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Http/Response.php(35): Illuminate\\Http\\Response->setContent()
+#13 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(820): Illuminate\\Http\\Response->__construct()
+#14 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(789): Illuminate\\Routing\\Router::toResponse()
+#15 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(721): Illuminate\\Routing\\Router->prepareResponse()
+#16 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(128): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}()
+#17 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/app/Http/Middleware/RedirectIfAuthenticated.php(40): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#18 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): App\\Http\\Middleware\\RedirectIfAuthenticated->handle()
+#19 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#20 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
+#21 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(127): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#22 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(63): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequest()
+#23 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle()
+#24 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(103): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#25 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(723): Illuminate\\Pipeline\\Pipeline->then()
+#26 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(698): Illuminate\\Routing\\Router->runRouteWithinStack()
+#27 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(662): Illuminate\\Routing\\Router->runRoute()
+#28 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(651): Illuminate\\Routing\\Router->dispatchToRoute()
+#29 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(167): Illuminate\\Routing\\Router->dispatch()
+#30 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(128): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()
+#31 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/spondonit/lms-service/src/Middleware/LmsService.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#32 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): SpondonIt\\LmsService\\Middleware\\LmsService->handle()
+#33 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/livewire/livewire/src/DisableBrowserCache.php(19): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#34 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Livewire\\DisableBrowserCache->handle()
+#35 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/barryvdh/laravel-debugbar/src/Middleware/InjectDebugbar.php(66): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#36 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Barryvdh\\Debugbar\\Middleware\\InjectDebugbar->handle()
+#37 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#38 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#39 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle()
+#40 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#41 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#42 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle()
+#43 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#44 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle()
+#45 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(86): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#46 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle()
+#47 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/fruitcake/laravel-cors/src/HandleCors.php(52): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#48 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Fruitcake\\Cors\\HandleCors->handle()
+#49 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/fideloper/proxy/src/TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#50 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Fideloper\\Proxy\\TrustProxies->handle()
+#51 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(103): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#52 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(142): Illuminate\\Pipeline\\Pipeline->then()
+#53 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(111): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#54 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
+#55 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/server.php(21): require_once('...')
+#56 {main}
+
+[previous exception] [object] (ErrorException(code: 0): Undefined variable $errors at /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/storage/framework/views/c9360e52ae6019bb84b3eeb18657cde09af36cd0.php:52)
+[stacktrace]
+#0 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/storage/framework/views/c9360e52ae6019bb84b3eeb18657cde09af36cd0.php(52): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
+#1 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(107): require('...')
+#2 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(108): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#3 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire()
+#4 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/livewire/livewire/src/ComponentConcerns/RendersLivewireComponents.php(69): Illuminate\\View\\Engines\\PhpEngine->evaluatePath()
+#5 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(61): Livewire\\CompilerEngineForIgnition->evaluatePath()
+#6 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/facade/ignition/src/Views/Engines/CompilerEngine.php(37): Illuminate\\View\\Engines\\CompilerEngine->get()
+#7 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/livewire/livewire/src/ComponentConcerns/RendersLivewireComponents.php(35): Facade\\Ignition\\Views\\Engines\\CompilerEngine->get()
+#8 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/View/View.php(139): Livewire\\CompilerEngineForIgnition->get()
+#9 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/View/View.php(122): Illuminate\\View\\View->getContents()
+#10 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/View/View.php(91): Illuminate\\View\\View->renderContents()
+#11 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Http/Response.php(69): Illuminate\\View\\View->render()
+#12 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Http/Response.php(35): Illuminate\\Http\\Response->setContent()
+#13 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(820): Illuminate\\Http\\Response->__construct()
+#14 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(789): Illuminate\\Routing\\Router::toResponse()
+#15 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(721): Illuminate\\Routing\\Router->prepareResponse()
+#16 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(128): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}()
+#17 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/app/Http/Middleware/RedirectIfAuthenticated.php(40): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#18 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): App\\Http\\Middleware\\RedirectIfAuthenticated->handle()
+#19 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#20 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
+#21 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(127): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#22 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(63): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequest()
+#23 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle()
+#24 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(103): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#25 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(723): Illuminate\\Pipeline\\Pipeline->then()
+#26 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(698): Illuminate\\Routing\\Router->runRouteWithinStack()
+#27 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(662): Illuminate\\Routing\\Router->runRoute()
+#28 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(651): Illuminate\\Routing\\Router->dispatchToRoute()
+#29 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(167): Illuminate\\Routing\\Router->dispatch()
+#30 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(128): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()
+#31 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/spondonit/lms-service/src/Middleware/LmsService.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#32 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): SpondonIt\\LmsService\\Middleware\\LmsService->handle()
+#33 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/livewire/livewire/src/DisableBrowserCache.php(19): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#34 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Livewire\\DisableBrowserCache->handle()
+#35 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/barryvdh/laravel-debugbar/src/Middleware/InjectDebugbar.php(66): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#36 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Barryvdh\\Debugbar\\Middleware\\InjectDebugbar->handle()
+#37 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#38 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#39 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle()
+#40 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#41 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#42 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle()
+#43 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#44 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle()
+#45 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(86): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#46 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle()
+#47 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/fruitcake/laravel-cors/src/HandleCors.php(52): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#48 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Fruitcake\\Cors\\HandleCors->handle()
+#49 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/fideloper/proxy/src/TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#50 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Fideloper\\Proxy\\TrustProxies->handle()
+#51 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(103): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#52 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(142): Illuminate\\Pipeline\\Pipeline->then()
+#53 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(111): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#54 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
+#55 /home/hassangomaa/Documents/Laravel_projects/LMS_elingua/lms/lms_apis/lms/server.php(21): require_once('...')
+#56 {main}
 "} 
