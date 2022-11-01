@@ -10,6 +10,7 @@ use App\Models\Course;
 use App\Models\CourseLevel;
 use App\Models\Language;
 use App\Models\OnlineQuiz;
+use App\Models\QuestionBank;
 
 
 /**
@@ -223,7 +224,8 @@ class CourseApiController extends Controller
      */
     public function getCourseDetails($id)
     {
-        $course = Course::with('user', 'chapters', 'lessons', 'lessons.quiz', 'files', 'comments', 'comments.user')->find($id);
+//        $course = Course::with('user', 'chapters', 'lessons', 'lessons.quiz', 'files', 'comments', 'comments.user')->find($id);
+        $course = Course::all()->find($id);
         $course->total_percentage = $course->loginUserTotalPercentage;
         $reviews = DB::table('course_reveiws')
             ->select(
@@ -349,10 +351,11 @@ class CourseApiController extends Controller
      */
     public function getQuizDetails($id)
     {
-        $relation = ['user', 'comments', 'comments.user', 'quiz', 'quiz.assign', 'quiz.assign.questionBank', 'quiz.assign.questionBank.questionMu'];
+//        $relation = ['user', 'comments', 'comments.user', 'quiz', 'quiz.assign', 'quiz.assign.questionBank', 'quiz.assign.questionBank.questionMu'];
 
 
-        $course = Course::with($relation)->find($id);
+//        $course = Course::with($relation)->find($id);
+        $course = Course::all()->find($id);
         $reviews = DB::table('course_reveiws')
             ->select(
                 'course_reveiws.id',
