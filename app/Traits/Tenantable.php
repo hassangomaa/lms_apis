@@ -13,7 +13,7 @@ trait Tenantable
 
     protected static function bootTenantable()
     {
-        static::addGlobalScope(new LmsScope);
+        // static::addGlobalScope(new LmsScope);
 
         if (isset(Auth::user()->lms_id)) {
             static::creating(function ($model) {
