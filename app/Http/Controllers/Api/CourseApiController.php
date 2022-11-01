@@ -5,11 +5,11 @@ namespace App\Http\Controllers\Api;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
-use Modules\CourseSetting\Entities\Category;
-use Modules\CourseSetting\Entities\Course;
-use Modules\CourseSetting\Entities\CourseLevel;
-use Modules\Localization\Entities\Language;
-use Modules\Quiz\Entities\OnlineQuiz;
+use App\Models\Category;
+use App\Models\Course;
+use App\Models\CourseLevel;
+use App\Models\Language;
+use App\Models\OnlineQuiz;
 
 
 /**
@@ -1438,5 +1438,4 @@ class CourseApiController extends Controller
         }
         return response()->json($response, 200);
     }
-
 }

@@ -17,6 +17,8 @@
         "laravel/ui": "*",
         "laravelcollective/html": "^6.3",
         "rtconner/laravel-likeable": "^3.2",
+        "spatie/laravel-sluggable": "^3.4",
+        "spatie/laravel-translatable": "*",
         "tymon/jwt-auth": "*"
     },
     "require-dev": {
