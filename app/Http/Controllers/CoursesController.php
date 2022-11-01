@@ -6,13 +6,15 @@ use App\Models\Admin;
 use App\Models\Course;
 use Illuminate\Http\Request;
 
+
+
+
+
+
 class CoursesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
+
     public function index()
     {
         //return the JSON file

@@ -15,6 +15,7 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
+        $this->app->register(\L5Swagger\L5SwaggerServiceProvider::class);
     }
 
     /**
@@ -27,7 +28,6 @@ class AppServiceProvider extends ServiceProvider
         // ADD constrains To yout DB
 
         //string limit contrains
-          Schema::defaultStringLength(500);
-
+        Schema::defaultStringLength(500);
     }
 }

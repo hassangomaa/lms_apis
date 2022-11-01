@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\API;
+namespace App\Http\Controllers\Api;
 
 use App\Http\Requests\StoreUserRequest;
 use App\Models\User;
@@ -8,6 +8,12 @@ use App\Traits\GeneralTrait;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Admin;
+
+ use Illuminate\Support\Facades\DB;
+//use Modules\CourseSetting\Entities\Category;
+// use Modules\CourseSetting\Entities\CourseLevel;
+//use Modules\Localization\Entities\Language;
+//use Modules\Quiz\Entities\OnlineQuiz;
 
 class AdminsController extends Controller
 {

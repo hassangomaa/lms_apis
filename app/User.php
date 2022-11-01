@@ -49,15 +49,14 @@ class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens, Notifiable, UserChatMethods;
 
-    protected $connection = 'mysql';
-
-    public function __construct(array $attributes = array())
-    {
-        parent::__construct($attributes);
-        if (isModuleActive('LmsSaasMD') && SaasDomain() != "main") {
-            $this->setConnection('mysql_md');
-        }
-    }
+//    protected $connection = 'mysql';
+//
+//    public function __construct(array $attributes = array())
+//    {
+//        $this->setConnection('mysql_md');
+//
+//
+//    }
 
     protected $guarded = ['id'];
 
