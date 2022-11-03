@@ -36,6 +36,7 @@ use App\Models\VirtualClass;
 use paytm\paytmchecksum\PaytmChecksum;
 use JoisarJignesh\Bigbluebutton\Facades\Bigbluebutton;
 use App\Models\BbbMeeting;
+use Illuminate\Support\Facades\Validator;
 
 /**
  * @group  Frontend Api
@@ -664,7 +665,7 @@ class WebsiteApiController extends Controller
     public function myCourses()
     {
         try {
-            $courses = CourseEnrolled::where('course_enrolleds.user_id', Auth::user()->id)
+            $courses = CourseEnrolled::where('course_enrolleds.user_id', Auth::id())
                 ->leftjoin('courses', 'courses.id', 'course_enrolleds.course_id')
                 ->where('courses.type', 1)
                 ->select('courses.*')
@@ -700,14 +701,14 @@ class WebsiteApiController extends Controller
     public function myQuizzes()
     {
         try {
-            $courses = CourseEnrolled::where('course_enrolleds.user_id', Auth::user()->id)
+            $courses = CourseEnrolled::where('course_enrolleds.user_id', Auth::id())
                 ->leftjoin('courses', 'courses.id', 'course_enrolleds.course_id')
                 ->where('courses.type', 2)
                 ->with('user', 'course')
                 ->get();
             foreach ($courses as $course) {
                 $user = User::where('id', $course->user_id)->first();
-                $tests = QuizTest::where('user_id', Auth::user()->id)->get();
+                $tests = QuizTest::where('user_id', Auth::id())->get();
                 $course->user = $user;
                 $course->about = json_decode($course->about, true);
                 $course->requirements = json_decode($course->requirements, true);
@@ -733,7 +734,7 @@ class WebsiteApiController extends Controller
     public function myClasses()
     {
         try {
-            $courses = CourseEnrolled::where('course_enrolleds.user_id', Auth::user()->id)
+            $courses = CourseEnrolled::where('course_enrolleds.user_id', Auth::id())
                 ->leftjoin('courses', 'courses.id', 'course_enrolleds.course_id')
                 ->where('courses.type', 3)
                 ->with('user', 'course')
@@ -798,7 +799,9 @@ class WebsiteApiController extends Controller
                    'zip' => 'required',
                ]);
            }*/
-
+//    dd($request);
+//    die();
+//        return response()->json($request, 200);
 
         try {
 
@@ -819,13 +822,13 @@ class WebsiteApiController extends Controller
             $user->instagram = $request->instagram;
             $user->about = $request->about;
             $fileName = "";
-            if ($request->file('image') != "") {
-                $file = $request->file('image');
-                $fileName = md5($file->getClientOriginalName() . time()) . "." . $file->getClientOriginalExtension();
-                $file->move('public/profile/', $fileName);
-                $fileName = 'public/profile/' . $fileName;
-                $user->image = $fileName;
-            }
+//            if ($request->file('image') != "") {
+//                $file = $request->file('image');
+//                $fileName = md5($file->getClientOriginalName() . time()) . "." . $file->getClientOriginalExtension();
+//                $file->move('public/profile/', $fileName);
+//                $fileName = 'public/profile/' . $fileName;
+//                $user->image = $fileName;
+//            }
             $user->save();
             $response = [
                 'success' => true,
@@ -835,7 +838,7 @@ class WebsiteApiController extends Controller
         } catch (\Exception $e) {
             $response = [
                 'success' => false,
-                'message' => "Something went wrong",
+                'message' => "Something went wrong:".$e,
             ];
             return response()->json($response, 500);
         }
@@ -861,7 +864,7 @@ class WebsiteApiController extends Controller
         ]);
 
         try {
-            $user_id = Auth::user()->id;
+            $user_id = Auth::id();
             $review = CourseReveiw::where('user_id', $user_id)->where('course_id', $request->course_id)->first();
             // return $review;
             if (is_null($review)) {
@@ -880,7 +883,7 @@ class WebsiteApiController extends Controller
                 $course->save();
 
                 // $notification = new Notification();
-                // $notification->author_id = Auth::user()->id;
+                // $notification->author_id = Auth::id();
                 // $notification->user_id = $user_id;
                 // $notification->course_id = $request->course_id;
                 // $notification->course_review_id = $newReview->id;
@@ -953,7 +956,7 @@ class WebsiteApiController extends Controller
             if (isset($course)) {
 
                 $comment = new CourseComment();
-                $comment->user_id = Auth::user()->id;
+                $comment->user_id = Auth::id();
                 $comment->course_id = $request->course_id;
                 $comment->instructor_id = $course->user_id;
                 $comment->comment = $request->comment;
@@ -961,7 +964,7 @@ class WebsiteApiController extends Controller
                 $comment->save();
 
                 // $notification = new Notification();
-                // $notification->author_id = Auth::user()->id;
+                // $notification->author_id = Auth::id();
                 // $notification->user_id = $course->user_id;
                 // $notification->course_id = $course->id;
                 // $notification->course_comment_id = $comment->id;
@@ -1035,7 +1038,7 @@ class WebsiteApiController extends Controller
             if (isset($course)) {
 
                 $comment = new CourseCommentReply();
-                $comment->user_id = Auth::user()->id;
+                $comment->user_id = Auth::id();
                 $comment->course_id = $course->id;
                 $comment->comment_id = $request->comment_id;
                 $comment->reply = $request->reply;
@@ -1109,32 +1112,35 @@ class WebsiteApiController extends Controller
     public function makeOrder(Request $request)
     {
         $response = array('response' => '', 'success' => false);
-        /* $validator = Validator::make($request->all(), [
-             'billing_address' => 'required',
-             'old_billing' => 'required_if:billing_address,previous',
-             'first_name' => 'required_if:billing_address,new',
-             'last_name' => 'required_if:billing_address,new',
-             'country' => 'required_if:billing_address,new',
-             'address1' => 'required_if:billing_address,new',
-             'city' => 'required_if:billing_address,new',
-             'phone' => 'required_if:billing_address,new',
-             'email' => 'required_if:billing_address,new',
-         ]);
-         if ($validator->fails()) {
-             return $response['response'] = $validator->messages();
-         }*/
-
+//        $validator = Validator::make($request->all(), [
+//             'billing_address' => 'required',
+//             'old_billing' => 'required_if:billing_address,previous',
+//             'first_name' => 'required_if:billing_address,new',
+//             'last_name' => 'required_if:billing_address,new',
+//             'country' => 'required_if:billing_address,new',
+//             'address1' => 'required_if:billing_address,new',
+//             'city' => 'required_if:billing_address,new',
+//             'phone' => 'required_if:billing_address,new',
+//             'email' => 'required_if:billing_address,new',
+//         ]);
+//         if ($validator->fails()) {
+//             return $response['response'] = $validator->messages();
+//         }
+//        Auth::user()->id();//////////////////ERRRRRORRRRRRRRR
+        Auth::id();
         try {
             $profile = Auth::user();
+//            return response()->json($profile, 200);
+
             // $tracking = Cart::where('user_id', Auth::id())->first()->tracking;
             $tracking = Cart::where('user_id', Auth::id())->first()->tracking;
             if ($profile->role_id == 3) {
                 /* if (isSubscribe()) {
                      $total = 0;
                  } else {
-                     $total = Cart::where('user_id', Auth::user()->id)->sum('price');
+                     $total = Cart::where('user_id', Auth::id())->sum('price');
                  }*/
-                $total = Cart::where('user_id', Auth::user()->id)->sum('price');
+                $total = Cart::where('user_id', Auth::id())->sum('price');
             }
 
             $checkout = Checkout::where('tracking', $tracking)->where('user_id', Auth::id())->latest()->first();
@@ -1150,12 +1156,13 @@ class WebsiteApiController extends Controller
             }
 
 
-            if ($request->billing_address == 'new') {
+//            if ($request->billing_address == 'new') { //to enable Old billing payment
+                if (1) {
                 $bill = BillingDetails::where('tracking_id', $tracking)->first();
 
-                if (empty($bill)) {
+//                if (empty($bill)) {
                     $bill = new BillingDetails();
-                }
+//                }
 
                 $bill->user_id = Auth::id();
                 $bill->tracking_id = $tracking;
@@ -1174,7 +1181,7 @@ class WebsiteApiController extends Controller
                 $bill->payment_method = null;
                 $bill->save();
             } else {
-                $bill = BillingDetails::where('id', $request->old_billing)->first();
+                $bill = BillingDetails::where('id', $request->old_billing)->first();//active this!
             }
 
             $checkout_info = $checkout;
@@ -1249,7 +1256,7 @@ class WebsiteApiController extends Controller
             if (Auth::check()) {
                 $user = Auth::user();
                 $track = Cart::where('user_id', $user->id)->first()->tracking;
-                $total = Cart::where('user_id', Auth::user()->id)->sum('price');
+                $total = Cart::where('user_id', Auth::id())->sum('price');
                 $checkout_info = Checkout::where('tracking', $track)->where('user_id', $user->id)->latest()->first();
 
                 if ($gateWayName == "Wallet") {
@@ -1282,8 +1289,8 @@ class WebsiteApiController extends Controller
                         $course->total_enrolled = ($enrolled + 1);
 
                         //==========================Start Referral========================
-                        $purchase_history = CourseEnrolled::where('user_id', Auth::user()->id)->first();
-                        $referral_check = UserWiseCoupon::where('invite_accept_by', Auth::user()->id)->where('category_id', null)->where('course_id', null)->first();
+                        $purchase_history = CourseEnrolled::where('user_id', Auth::id())->first();
+                        $referral_check = UserWiseCoupon::where('invite_accept_by', Auth::id())->where('category_id', null)->where('course_id', null)->first();
                         $referral_settings = UserWiseCouponSetting::where('role_id', Auth::user()->role_id)->first();
 
                         if ($purchase_history == null && $referral_check != null) {
@@ -2075,7 +2082,7 @@ class WebsiteApiController extends Controller
 
     public function quizResults()
     {
-        $quiz = QuizTest::with('quiz')->where('user_id', Auth::user()->id)->get();
+        $quiz = QuizTest::with('quiz')->where('user_id', Auth::id())->get();
 
         $response = [
             'success' => true,
