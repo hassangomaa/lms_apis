@@ -5,12 +5,12 @@ use Carbon\Carbon;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
-use Modules\CourseSetting\Entities\CourseEnrolled;
-use Modules\FooterSetting\Entities\FooterSetting;
-use Modules\HumanResource\Entities\Attendance;
-use Modules\OrgSubscription\Entities\OrgCourseSubscription;
-use Modules\OrgSubscription\Entities\OrgSubscriptionCheckout;
-use Modules\Payment\Entities\Cart;
+use App\Models\CourseEnrolled;
+use App\Models\FooterSetting;
+use App\Models\Attendance;
+use App\Models\OrgCourseSubscription;
+use App\Models\OrgSubscriptionCheckout;
+use App\Models\Cart;
 use Modules\Setting\Model\Currency;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Support\Facades\Auth;
@@ -21,20 +21,20 @@ use Illuminate\Support\Facades\Route;
 use Modules\Setting\Entities\IpBlock;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Schema;
-use Modules\Appearance\Entities\Theme;
+use App\Models\Theme;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
-use Modules\Setting\Model\GeneralSetting;
+use App\Models\GeneralSetting;
 use App\Notifications\GeneralNotification;
 use Illuminate\Support\Facades\Notification;
-use Modules\CourseSetting\Entities\Category;
-use Modules\FrontendManage\Entities\HomeContent;
+use App\Models\Category;
+use App\Models\HomeContent;
 use Modules\SystemSetting\Entities\EmailTemplate;
-use Modules\FrontendManage\Entities\CourseSetting;
-use Modules\StudentSetting\Entities\BookmarkCourse;
-use Modules\Subscription\Entities\SubscriptionCheckout;
-use Modules\NotificationSetup\Entities\RoleEmailTemplate;
-use Modules\NotificationSetup\Entities\UserNotificationSetup;
+use App\Models\CourseSetting;
+use App\Models\BookmarkCourse;
+use App\Models\SubscriptionCheckout;
+use App\Models\RoleEmailTemplate;
+use App\Models\UserNotificationSetup;
 
 if (!function_exists('send_smtp_mail')) {
     function send_smtp_mail($config, $receiver_email, $receiver_name, $sender_email, $sender_name, $subject, $message)
@@ -53,7 +53,6 @@ if (!function_exists('send_smtp_mail')) {
             $send->to($mail_val['send_to'])->subject($mail_val['subject']);
         });
     }
-
 }
 
 if (!function_exists('sendMailBySendGrid')) {
@@ -64,7 +63,8 @@ if (!function_exists('sendMailBySendGrid')) {
         $email->setSubject($subject);
         $email->addTo($receiver_email, $receiver_email);
         $email->addContent(
-            "text/html", (string)view('partials.email', ['body' => $message])
+            "text/html",
+            (string)view('partials.email', ['body' => $message])
         );
         $sendgrid = new \SendGrid($config->api_key);
         try {
@@ -116,10 +116,8 @@ if (!function_exists('send_email')) {
 
                 if ($type == "CONTACT_MESSAGE") {
                     $to_email = Settings('email');
-
                 } else {
                     $to_email = $user->email;
-
                 }
 
                 if ($config->id == 1) {
@@ -136,8 +134,6 @@ if (!function_exists('send_email')) {
             \Illuminate\Support\Facades\Log::error($e->getMessage());
             return false;
         }
-
-
     }
 }
 
@@ -233,7 +229,6 @@ if (!function_exists('fileUpload')) {
         $file->move($destination, $fileName);
         $fileName = $destination . $fileName;
         return $fileName;
-
     }
 }
 
@@ -254,14 +249,12 @@ if (!function_exists('fileUpdate')) {
             if ($databaseFile && file_exists($databaseFile)) {
 
                 unlink($databaseFile);
-
             }
         } elseif (!$file and $databaseFile) {
             $fileName = $databaseFile;
         }
 
         return $fileName;
-
     }
 }
 if (!function_exists('showPicName')) {
@@ -288,7 +281,6 @@ if (!function_exists('getSetting')) {
     {
         try {
             return app('getSetting');
-
         } catch (Exception $exception) {
             return false;
         }
@@ -315,8 +307,6 @@ if (!function_exists('youtubeVideo')) {
         } else {
             return $video_url;
         }
-
-
     }
 }
 
@@ -338,7 +328,7 @@ if (!function_exists('cartItem')) {
     function cartItem()
     {
         if (Auth::check()) {
-            return Cart::where('user_id', Auth::user()->id)->when(isModuleActive('Appointment'), function($query) {
+            return Cart::where('user_id', Auth::user()->id)->when(isModuleActive('Appointment'), function ($query) {
                 $query->whereNotNull('course_id');
             })->count();
         } else if (session()->get('cart')) {
@@ -369,7 +359,6 @@ function send_php_mail($receiver_email, $receiver_name, $sender_email, $subject,
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=utf-8\r\n";
     return mail($receiver_email, $subject, $message, $headers);
-
 }
 
 
@@ -411,7 +400,6 @@ if (!function_exists('permissionCheck')) {
                     } else {
                         $roles = app('permission_list');
                         $role = $roles->where('id', auth()->user()->role_id)->first();
-
                     }
                     if ($role != null && $role->permissions->contains('route', $route_name)) {
                         return TRUE;
@@ -427,7 +415,6 @@ if (!function_exists('permissionCheck')) {
                         return FALSE;
                     }
                 }
-
             }
         }
         return FALSE;
@@ -490,7 +477,6 @@ if (!function_exists('getConversations')) {
             $output = '<p class="NoMessageFound">' . $message . '!</p>';
         }
         return $output;
-
     }
 }
 
@@ -504,7 +490,6 @@ if (!function_exists('checkModuleEnable')) {
         } else {
             return false;
         }
-
     }
 }
 
@@ -2194,7 +2179,6 @@ if (!function_exists('isAdmin')) {
         } else {
             return false;
         }
-
     }
 }
 
@@ -2249,7 +2233,7 @@ if (!function_exists('isFree')) {
 if (!function_exists('totalUnreadMessages')) {
     function totalUnreadMessages()
     {
-        return \Modules\SystemSetting\Entities\Message::where('seen', '=', 0)->where('reciever_id', '=', Auth::id())->count();
+        return App\Modles\Message::where('seen', '=', 0)->where('reciever_id', '=', Auth::id())->count();
     }
 }
 
@@ -2288,7 +2272,6 @@ if (!function_exists('putEnvConfigration')) {
         if (is_bool($keyPosition)) {
 
             $str .= $envKey . '="' . $envValue . '"';
-
         } else {
             $endOfLinePosition = strpos($str, "\n", $keyPosition);
             $oldLine = substr($str, $keyPosition, $endOfLinePosition - $keyPosition);
@@ -2302,7 +2285,6 @@ if (!function_exists('putEnvConfigration')) {
         } else {
             return true;
         }
-
     }
 }
 
@@ -2338,7 +2320,6 @@ if (!function_exists('UserEmailNotificationSetup')) {
                 } else {
                     return false;
                 }
-
             } else {
                 return true;
             }
@@ -2362,7 +2343,6 @@ if (!function_exists('UserBrowserNotificationSetup')) {
                 } else {
                     return false;
                 }
-
             } else {
                 return true;
             }
@@ -2398,7 +2378,6 @@ if (!function_exists('send_browser_notification')) {
             ];
             Notification::send($user, new GeneralNotification($details));
         }
-
     }
 }
 if (!function_exists('htmlPart')) {
@@ -2462,16 +2441,12 @@ if (!function_exists('getPriceFormat')) {
 
             if ($type == 1) {
                 $result = $symbol . $price;
-
             } elseif ($type == 2) {
                 $result = $symbol . ' ' . $price;
-
             } elseif ($type == 3) {
                 $result = $price . $symbol;
-
             } elseif ($type == 4) {
                 $result = $price . ' ' . $symbol;
-
             } else {
                 $result = $price;
             }
@@ -2514,7 +2489,6 @@ if (!function_exists('theme')) {
             $theme = 'infixlmstheme';
         }
         return 'frontend.' . $theme . '.' . $fileName;
-
     }
 }
 
@@ -2554,29 +2528,29 @@ if (!function_exists('Settings')) {
     function Settings($value = null)
     {
         try {
-            if (isModuleActive('LmsSaas')) {
-                $domain = SaasDomain();
-            } else {
-                $domain = 'main';
-            }
-            if ($value == "frontend_active_theme") {
-                return Cache::rememberForever('frontend_active_theme_' . $domain, function () {
-                    $setting = GeneralSetting::where('key', 'frontend_active_theme')->first();
-                    return $setting->value;
-                });
-            } elseif ($value == "active_time_zone") {
-                if (!isValidTimeZone(app('getSetting')[$value])) {
-                    return 'Asia/Dhaka';
-                }
-            } elseif ($value == "start_site") {
-                if (!isset(app('getSetting')[$value])) {
-                    if (isModuleActive('Org')) {
-                        return 'loginpage';
-                    } else {
-                        return 'homepage';
-                    }
-                }
-            }
+            // if (isModuleActive('LmsSaas')) {
+            //     $domain = SaasDomain();
+            // } else {
+            //     $domain = 'main';
+            // }
+            // if ($value == "frontend_active_theme") {
+            //     return Cache::rememberForever('frontend_active_theme_' . $domain, function () {
+            //         $setting = GeneralSetting::where('key', 'frontend_active_theme')->first();
+            //         return $setting->value;
+            //     });
+            // } elseif ($value == "active_time_zone") {
+            //     if (!isValidTimeZone(app('getSetting')[$value])) {
+            //         return 'Asia/Dhaka';
+            //     }
+            // } elseif ($value == "start_site") {
+            //     if (!isset(app('getSetting')[$value])) {
+            //         if (isModuleActive('Org')) {
+            //             return 'loginpage';
+            //         } else {
+            //             return 'homepage';
+            //         }
+            //     }
+            // }
             return app('getSetting')[$value];
         } catch (Exception $exception) {
             return false;
@@ -2631,14 +2605,13 @@ if (!function_exists('isModuleActive')) {
             }
 
 
-//            }
+            //            }
             return false;
         } catch (\Throwable $th) {
 
 
             return false;
         }
-
     }
 }
 
@@ -2649,19 +2622,19 @@ if (!function_exists('getPercentageRating')) {
         if ($review_data['total'] > 0) {
             $data['total'] = $review_data['total'] ?? 0;
             switch ($value) {
-                case 1 :
+                case 1:
                     $per = $review_data['1'];
                     break;
-                case 2 :
+                case 2:
                     $per = $review_data['2'];
                     break;
-                case 3 :
+                case 3:
                     $per = $review_data['3'];
                     break;
-                case 4 :
+                case 4:
                     $per = $review_data['4'];
                     break;
-                case 5 :
+                case 5:
                     $per = $review_data['5'];
                     break;
                 default:
@@ -2765,7 +2738,6 @@ function convertCurrency($from_currency, $to_currency, $amount)
             if ($key == $to) {
                 $to_ = $value;
             }
-
         }
         if ($to_ > 0) {
             $total = ($to_ / $from_) * $amount;
@@ -2803,7 +2775,6 @@ if (!function_exists('getDomainName')) {
         $url_domain = preg_replace("(^http?://)", "", $url_domain);
         $url_domain = str_replace("/", "", $url_domain);
         return $url_domain;
-
     }
 }
 
@@ -2816,7 +2787,6 @@ if (!function_exists('getMenuLink')) {
                 if (substr($menu->link, 0, 1) == '/') {
                     if ($menu->link == "/") {
                         return url($menu->link) . '/';
-
                     }
                     return url($menu->link);
                 }
@@ -2834,31 +2804,25 @@ if (!function_exists('getMenuLink')) {
                 $page = \Modules\FrontendManage\Entities\FrontPage::find($element_id);
                 if ($page) {
                     $url = url($page->slug);
-
                 }
             } elseif ($type == "Category") {
                 $url = route('courses') . "?category=" . $element_id;
-
             } elseif ($type == "Sub Category") {
                 $url = route('courses') . "?category=" . $element_id;
-
             } elseif ($type == "Course") {
                 $course = \Modules\CourseSetting\Entities\Course::find($element_id);
                 if ($course) {
                     $url = route('courseDetailsView', [$course->id, $course->slug]);
-
                 }
             } elseif ($type == "Quiz") {
                 $course = \Modules\CourseSetting\Entities\Course::find($element_id);
                 if ($course) {
                     $url = route('classDetails', [$course->id, $course->slug]);
-
                 }
             } elseif ($type == "Class") {
                 $course = \Modules\CourseSetting\Entities\Course::find($element_id);
                 if ($course) {
                     $url = route('courseDetailsView', [$course->id, $course->slug]);
-
                 }
             } elseif ($type == "Custom Link") {
                 $url = '';
@@ -2867,7 +2831,6 @@ if (!function_exists('getMenuLink')) {
 
 
         return $url;
-
     }
 }
 
@@ -2896,7 +2859,6 @@ if (!function_exists('isSubscribe')) {
         }
 
         return false;
-
     }
 }
 
@@ -2920,15 +2882,12 @@ if (!function_exists('userCurrentPlan')) {
                     }
                     return $plan;
                 }
-
-
             }
         } else {
             return null;
         }
 
         return null;
-
     }
 }
 if (!function_exists('hasTable')) {
@@ -2939,7 +2898,6 @@ if (!function_exists('hasTable')) {
         } else {
             return false;
         }
-
     }
 }
 
@@ -2957,7 +2915,6 @@ if (!function_exists('reviewCanDelete')) {
         } else {
             return false;
         }
-
     }
 }
 if (!function_exists('commentCanDelete')) {
@@ -2973,7 +2930,6 @@ if (!function_exists('commentCanDelete')) {
         } else {
             return false;
         }
-
     }
 }
 if (!function_exists('blogCommentCanDelete')) {
@@ -3014,7 +2970,6 @@ if (!function_exists('hasTax')) {
             } else {
                 return false;
             }
-
         }
         return false;
     }
@@ -3055,7 +3010,6 @@ if (!function_exists('applyTax')) {
         $totalPrice = $price + $vatToPay;
 
         return $totalPrice;
-
     }
 }
 if (!function_exists('taxAmount')) {
@@ -3069,7 +3023,6 @@ if (!function_exists('taxAmount')) {
         }
         $vatToPay = ($price / 100) * $vat;
         return $vatToPay;
-
     }
 }
 
@@ -3077,7 +3030,6 @@ if (!function_exists('getPriceAsNumber')) {
     function getPriceAsNumber($price)
     {
         return str_replace(',', '', $price);
-
     }
 }
 
@@ -3090,8 +3042,6 @@ if (!function_exists('currentTheme')) {
         } else {
             return 'infixlmstheme';
         }
-
-
     }
 }
 
@@ -3134,7 +3084,7 @@ if (!function_exists('validationMessage')) {
 
             foreach ($single_rule as $rule) {
                 $string = explode(':', $rule);
-                $message [$attribute . '.' . $string[0]] = __('validation.' . $attribute . '.' . $string[0]);
+                $message[$attribute . '.' . $string[0]] = __('validation.' . $attribute . '.' . $string[0]);
             }
         }
 
@@ -3148,8 +3098,6 @@ if (!function_exists('escapHtmlChar')) {
         $find = ['"', "'"];
         $replace = ['&quot;', '&apos;'];
         return str_replace($find, $replace, htmlspecialchars($str));
-
-
     }
 }
 if (!function_exists('doubleQuotes2singleQuotes')) {
@@ -3158,8 +3106,6 @@ if (!function_exists('doubleQuotes2singleQuotes')) {
         $find = ['"'];
         $replace = ["'"];
         return str_replace($find, $replace, htmlspecialchars($str));
-
-
     }
 }
 
@@ -3188,7 +3134,6 @@ if (!function_exists('checkParent')) {
             $string = $string . '>';
         }
         return $string;
-
     }
 }
 
@@ -3196,25 +3141,24 @@ if (!function_exists('checkParent')) {
 if (!function_exists('GettingError')) {
     function GettingError($message, $url = '', $ip = '', $agent = '', $return = false)
     {
-        if (Auth::check()) {
-            $user_id = Auth::user()->id;
-        } else {
-            $user_id = 0;
-        }
-        \Modules\Setting\Entities\ErrorLog::create([
-            'subject' => $message,
-            'type' => '1',
-            'url' => $url,
-            'ip' => $ip,
-            'agent' => $agent,
-            'user_id' => $user_id,
-        ]);
-        if ($return) {
-            return false;
-        } else {
-            abort('500', trans('frontend.Something went wrong, Please check error log'));
-        }
-
+//        if (Auth::check()) {
+//            $user_id = Auth::user()->id;
+//        } else {
+//            $user_id = 0;
+//        }
+//        \Modules\Setting\Entities\ErrorLog::create([
+//            'subject' => $message,
+//            'type' => '1',
+//            'url' => $url,
+//            'ip' => $ip,
+//            'agent' => $agent,
+//            'user_id' => $user_id,
+//        ]);
+//        if ($return) {
+//            return false;
+//        } else {
+//            abort('500', trans('frontend.Something went wrong, Please check error log'));
+//        }
     }
 }
 
@@ -3233,8 +3177,6 @@ if (!function_exists('isViewable')) {
             }
         }
         return $isViewable;
-
-
     }
 }
 
@@ -3289,7 +3231,6 @@ if (!function_exists('GenerateGeneralSetting')) {
                 $strJsonFileContents = null;
             } else {
                 $strJsonFileContents = file_get_contents($path);
-
             }
             $file_data = json_decode($strJsonFileContents, true);
             $setting_array[$domain] = $settings;
@@ -3300,7 +3241,6 @@ if (!function_exists('GenerateGeneralSetting')) {
             }
             $merged_array = json_encode($merged_array, JSON_PRETTY_PRINT);
             file_put_contents($path, $merged_array);
-
         }
     }
 }
@@ -3388,10 +3328,8 @@ if (!function_exists('getHomeContents')) {
             $row = $all->where('key', $value)->first();
             $result = $row->getTranslation('value', $lang);
         } catch (\Exception $e) {
-
         }
         return $result;
-
     }
 }
 
@@ -3413,7 +3351,6 @@ if (!function_exists('isBundleValid')) {
                     return true;
                 }
             }
-
         }
 
         return false;
@@ -3442,10 +3379,7 @@ if (!function_exists('orgSubscriptionCourseValidity')) {
                             return false;
                         }
                     }
-
                 }
-
-
             }
         }
 
@@ -3471,19 +3405,16 @@ if (!function_exists('orgSubscriptionCourseSequence')) {
                             }
                         }
                     }
-
                 } else {
                     $end_date = Carbon::parse($cko->start_date)->addDays($cko->days);
                     if ($cko->plan->sequence == 1 && $end_date->format('Y-m-d') > date('Y-m-d')) {
                         foreach ($cko->plan->assign as $course) {
-//                            $access_courses[] = $course->course_id;
+                            //                            $access_courses[] = $course->course_id;
                             if ($course->course_id == $courseId) {
                                 $plan_id = $course->plan_id;
                             }
-
                         }
                     }
-
                 }
             }
             if ($plan_id) {
@@ -3496,7 +3427,6 @@ if (!function_exists('orgSubscriptionCourseSequence')) {
                         }
                     }
                 }
-
             } else {
                 return true;
             }
@@ -3706,7 +3636,6 @@ if (!function_exists('updateModuleParentRoute')) {
             Cache::forget('PolicyPermissionList');
             Cache::forget('PolicyRoleList');
         }
-
     }
 }
 
@@ -3808,7 +3737,6 @@ if (!function_exists('affiliateConfig')) {
                 if (Cache::has('affiliate_config_' . SaasDomain())) {
                     $affiliate_configs = Cache::get('affiliate_config_' . SaasDomain());
                     return $affiliate_configs[$key];
-
                 } else {
                     Cache::forget('affiliate_config_' . SaasDomain());
                     $datas = [];
@@ -3824,7 +3752,6 @@ if (!function_exists('affiliateConfig')) {
             } else {
                 return false;
             }
-
         } catch (Exception $exception) {
             return false;
         }
@@ -3843,7 +3770,6 @@ if (!function_exists('isAffiliateUser')) {
                 }
             }
             return false;
-
         } catch (Exception $exception) {
             return false;
         }
@@ -3866,7 +3792,6 @@ if (!function_exists('hasAffiliateAccess')) {
             }
 
             return false;
-
         } catch (Exception $exception) {
             return false;
         }
@@ -3884,16 +3809,12 @@ if (!function_exists('showPrice')) {
 
             if ($type == 1) {
                 $result = $symbol . $price;
-
             } elseif ($type == 2) {
                 $result = $symbol . ' ' . $price;
-
             } elseif ($type == 3) {
                 $result = $price . $symbol;
-
             } elseif ($type == 4) {
                 $result = $price . ' ' . $symbol;
-
             } else {
                 $result = $price;
             }
@@ -3952,7 +3873,6 @@ if (!function_exists('orgGetStartEndDate')) {
                 if (!empty($end)) {
                     $days['end'] = Carbon::parse($end)->format('d/m/y h:i A');
                 }
-
             }
         } else {
             $days['start'] = Carbon::parse($course->created_at)->format('d/m/y h:i A');
@@ -4043,8 +3963,10 @@ if (!function_exists('footerSettings')) {
 if (!function_exists('convertToSlug')) {
     function convertToSlug($str, $delimiter = '-')
     {
-        $unwanted_array = ['ś' => 's', 'ą' => 'a', 'ć' => 'c', 'ç' => 'c', 'ę' => 'e', 'ł' => 'l', 'ń' => 'n', 'ó' => 'o', 'ź' => 'z', 'ż' => 'z',
-            'Ś' => 's', 'Ą' => 'a', 'Ć' => 'c', 'Ç' => 'c', 'Ę' => 'e', 'Ł' => 'l', 'Ń' => 'n', 'Ó' => 'o', 'Ź' => 'z', 'Ż' => 'z'];
+        $unwanted_array = [
+            'ś' => 's', 'ą' => 'a', 'ć' => 'c', 'ç' => 'c', 'ę' => 'e', 'ł' => 'l', 'ń' => 'n', 'ó' => 'o', 'ź' => 'z', 'ż' => 'z',
+            'Ś' => 's', 'Ą' => 'a', 'Ć' => 'c', 'Ç' => 'c', 'Ę' => 'e', 'Ł' => 'l', 'Ń' => 'n', 'Ó' => 'o', 'Ź' => 'z', 'Ż' => 'z'
+        ];
         $str = strtr($str, $unwanted_array);
 
         $slug = strtolower(trim(preg_replace('/[\s-]+/', $delimiter, preg_replace('/[^A-Za-z0-9-]+/', $delimiter, preg_replace('/[&]/', 'and', preg_replace('/[\']/', '', iconv('UTF-8', 'ASCII//TRANSLIT', $str))))), $delimiter));

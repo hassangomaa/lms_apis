@@ -71,6 +71,7 @@ class  Kernel extends HttpKernel
         'auth.guard' => AssignGuard::class,
         'auth.guarding' => guarding::class,
         'checkPassword' => \App\Http\Middleware\CheckPassword::class,
+        'RoutePermissionCheck' => \App\Http\Middleware\RoutePermissionCheck::class,
 
     ];
 }

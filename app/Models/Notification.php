@@ -5,11 +5,11 @@ namespace App\Models;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use App\User;
-use Modules\CourseSetting\Entities\Course;
-use Modules\CourseSetting\Entities\CourseComment;
-use Modules\CourseSetting\Entities\CourseReview;
-use Modules\CourseSetting\Entities\CourseEnrolled;
-use Modules\SystemSetting\Entities\Message;
+use App\Modles\Course;
+use App\Modles\CourseComment;
+use App\Modles\CourseReview;
+use App\Modles\CourseEnrolled;
+use App\Modles\Message;
 use Rennokki\QueryCache\Traits\QueryCacheable;
 
 class Notification extends Model

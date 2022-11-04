@@ -12,7 +12,7 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Cache\RateLimiter;
 use Illuminate\Support\Facades\DB;
-use Modules\Payment\Entities\Cart;
+use App\Models\Cart;
 use Illuminate\Auth\Events\Lockout;
 use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
@@ -21,12 +21,12 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Session;
 use Laravel\Socialite\Facades\Socialite;
-use Modules\Coupons\Entities\UserWiseCoupon;
-use Modules\CourseSetting\Entities\Course;
+use App\Models\UserWiseCoupon;
+use App\Models\Course;
 use Stevebauman\Location\Facades\Location;
 use Illuminate\Validation\ValidationException;
-use Modules\FrontendManage\Entities\LoginPage;
-use Modules\CourseSetting\Entities\CourseEnrolled;
+use App\Models\LoginPage;
+use App\Models\CourseEnrolled;
 
 class LoginController extends Controller
 {

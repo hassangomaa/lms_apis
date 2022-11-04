@@ -183,7 +183,7 @@ return [
          App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        App\Providers\GeneralSettingsServiceProvider::class,
+        // App\Providers\GeneralSettingsServiceProvider::class,
         App\Providers\BackendServiceProvider::class,
         Stevebauman\Location\LocationServiceProvider::class,
         Anand\LaravelPaytmWallet\PaytmWalletServiceProvider::class,

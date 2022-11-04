@@ -570,6 +570,8 @@ class AuthController extends Controller
             $language_code = $request->lang;
             $language = Language::where('status', 1)->where('code', $language_code)->first();
             $user = $request->user();
+//            return response()->json($language, 200);
+
             if ($user) {
                 $user->language_id = $language->id;
                 $user->language_code = $language->code;

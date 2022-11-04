@@ -6,12 +6,12 @@ use App\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
 
-use Modules\LmsSaas\Entities\SaasCheckout;
-use Modules\LmsSaas\Entities\SaasInstitutePlanManagement;
+use App\Models\SaasCheckout;
+use App\Models\SaasInstitutePlanManagement;
 
-use Modules\LmsSaasMD\Entities\SaasCheckout as MDSaasCheckout;
-use Modules\LmsSaasMD\Entities\SaasInstitutePlanManagement as MDSaasInstitutePlanManagement;
-use Modules\Setting\Model\GeneralSetting;
+use App\Models\SaasCheckout as MDSaasCheckout;
+use App\Models\SaasInstitutePlanManagement as MDSaasInstitutePlanManagement;
+use App\Model\GeneralSetting;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -40,7 +40,6 @@ class LmsInstitute extends Model
     {
         if (isModuleActive('LmsSaasMD')) {
             return $this->belongsTo(MDSaasInstitutePlanManagement::class, 'id', 'lms_id')->withDefault();
-
         } else {
             return $this->belongsTo(SaasInstitutePlanManagement::class, 'id', 'lms_id')->withDefault();
         }
@@ -50,7 +49,6 @@ class LmsInstitute extends Model
     {
         if (isModuleActive('LmsSaasMD')) {
             return $this->hasMany(MDSaasCheckout::class, 'lms_id')->orderBy('id', 'desc');
-
         } else {
             return $this->hasMany(SaasCheckout::class, 'lms_id')->orderBy('id', 'desc');
         }

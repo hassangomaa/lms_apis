@@ -8,10 +8,10 @@ use Carbon\Carbon;
 use App\BillingDetails;
 use App\Traits\Tenantable;
 use Illuminate\Support\Facades\Auth;
-use Modules\OrgSubscription\Entities\OrgCourseSubscription;
-use Modules\Payment\Entities\Checkout;
+use App\Models\OrgCourseSubscription;
+use App\Models\Checkout;
 use Illuminate\Database\Eloquent\Model;
-use Modules\Quiz\Entities\QuizTest;
+use App\Models\QuizTest;
 use Rennokki\QueryCache\Traits\QueryCacheable;
 
 class CourseEnrolled extends Model
@@ -48,18 +48,16 @@ class CourseEnrolled extends Model
     public function checkout()
     {
         return $this->belongsTo(Checkout::class, 'tracking', 'tracking')->withDefault();
-
     }
 
     public function bill()
     {
         return $this->belongsTo(BillingDetails::class, 'tracking', 'tracking_id')->withDefault();
-
     }
 
     public function completeLessons()
     {
-        return $this->hasMany(LessonComplete::class, 'course_id','course_id')->where('user_id', $this->user_id)->orderBy('id');
+        return $this->hasMany(LessonComplete::class, 'course_id', 'course_id')->where('user_id', $this->user_id)->orderBy('id');
     }
 
     public function getUserTotalPercentageAttribute()
@@ -88,7 +86,6 @@ class CourseEnrolled extends Model
         }
 
         return $percentage;
-
     }
 
     public function quizCompletes()
@@ -109,6 +106,5 @@ class CourseEnrolled extends Model
     public function orgSubscriptionPlan()
     {
         return $this->belongsTo(OrgCourseSubscription::class, 'org_subscription_plan_id')->withDefault();
-
     }
 }
