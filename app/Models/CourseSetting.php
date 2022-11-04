@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\FrontendManage\Entities;
+namespace App\Models;
 
 use App\Traits\Tenantable;
 use Illuminate\Support\Facades\DB;

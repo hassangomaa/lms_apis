@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\SystemSetting\Entities;
+namespace App\Models;
 
 use App\Traits\Tenantable;
 use Illuminate\Database\Eloquent\Model;

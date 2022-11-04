@@ -14,10 +14,10 @@
                     <option
                         data-display="{{__('common.Select')}} {{__('courses.Category')}}"
                         value="">{{__('common.Select')}} {{__('courses.Category')}}</option>
-                    @foreach($categories->where('parent_id',0) as $category)
-                        @include('coursesetting::parts_of_course_details.category_select_option',['category'=>$category,'level'=>1,'category_search'=>request('category')])
+{{--                    @foreach($categories->where('parent_id',0) as $category)--}}
+{{--                        @include('coursesetting::parts_of_course_details.category_select_option',['category'=>$category,'level'=>1,'category_search'=>request('category')])--}}
 
-                    @endforeach
+{{--                    @endforeach--}}
                 </select>
             </div>
         </div>

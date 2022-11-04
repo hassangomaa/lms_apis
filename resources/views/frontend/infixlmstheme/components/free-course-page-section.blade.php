@@ -3,27 +3,27 @@
     <div class="courses_area">
         <div class="container">
             <div class="row">
-                @if (courseSetting()->show_cql_left_sidebar==1)
+{{--                @if (courseSetting()->show_cql_left_sidebar==1)--}}
 
-                    <div class="col-lg-4 col-xl-3">
-                        <x-class-page-section-sidebar :level="$level" :type="$type" :categories="$categories"
-                                                    :category="$category" :languages="$languages" :language="$language" :mode="$mode"/>
-                    </div>
-                @endif
+{{--                    <div class="col-lg-4 col-xl-3">--}}
+{{--                        <x-class-page-section-sidebar :level="$level" :type="$type" :categories="$categories"--}}
+{{--                                                    :category="$category" :languages="$languages" :language="$language" :mode="$mode"/>--}}
+{{--                    </div>--}}
+{{--                @endif--}}
 
-                @php
-                    if(courseSetting()->show_cql_left_sidebar==1){
-                        $col_lg=8;
-                        $col_xl=9;
-                        $grid_size_lg=6;
-                        $grid_size_xl=courseSetting()->size_of_grid;
-                    }else{
-                        $col_lg=12;
-                        $col_xl=12;
-                        $grid_size_lg=6;
-                        $grid_size_xl=courseSetting()->size_of_grid;
-                    }
-                @endphp
+{{--                @php--}}
+{{--                    if(courseSetting()->show_cql_left_sidebar==1){--}}
+{{--                        $col_lg=8;--}}
+{{--                        $col_xl=9;--}}
+{{--                        $grid_size_lg=6;--}}
+{{--                        $grid_size_xl=courseSetting()->size_of_grid;--}}
+{{--                    }else{--}}
+{{--                        $col_lg=12;--}}
+{{--                        $col_xl=12;--}}
+{{--                        $grid_size_lg=6;--}}
+{{--                        $grid_size_xl=courseSetting()->size_of_grid;--}}
+{{--                    }--}}
+{{--                @endphp--}}
                 <div class="col-lg-{{@$col_lg}} col-xl-{{@$col_xl}}">
                     <div class="row">
                         <div class="col-12">

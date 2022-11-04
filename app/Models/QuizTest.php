@@ -5,7 +5,7 @@ namespace App\Models;
 use App\User;
 use App\Traits\Tenantable;
 use Illuminate\Database\Eloquent\Model;
-use Modules\CourseSetting\Entities\Course;
+use App\Models\Course;
 use Rennokki\QueryCache\Traits\QueryCacheable;
 
 class QuizTest extends Model
