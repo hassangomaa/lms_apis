@@ -14,7 +14,9 @@
     <meta property="og:title" content="{{Settings('site_title')}}"/>
     <meta property="og:description" content="{{Settings('footer_about_description')}}"/>
     <meta property="og:image" content=" @yield('og_image')"/>
-
+    @php
+        app()->setLocale(auth()->user()->language_code);
+    @endphp
     <title>
         @yield('title')
     </title>

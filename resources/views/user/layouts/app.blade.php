@@ -1,3 +1,6 @@
+@php
+    app()->setLocale(auth()->user()->language_code);
+@endphp
 <!DOCTYPE html>
 <html lang="en">
 

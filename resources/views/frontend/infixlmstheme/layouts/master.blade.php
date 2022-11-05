@@ -1,6 +1,8 @@
 @include(theme('partials._header'))
 @include(theme('partials._menu'))
-
+@php
+    app()->setLocale(auth()->user()->language_code);
+@endphp
 <input type="hidden" name="base_url" class="base_url" value="{{url('/')}}">
 <input type="hidden" name="csrf_token" class="csrf_token" value="{{csrf_token()}}">
 @if(auth()->check())

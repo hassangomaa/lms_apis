@@ -16,7 +16,7 @@
     @include("backend.partials.alertMessage")
 {{--    @dd($currentLang =auth()->user()->language_code);--}}
 
-  @php
+     @php
     app()->setLocale(auth()->user()->language_code);
     @endphp
     <div class="container-fluid p-0">

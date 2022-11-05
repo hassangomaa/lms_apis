@@ -1,5 +1,8 @@
 @extends('backend.master')
 @php
+    app()->setLocale(auth()->user()->language_code);
+@endphp
+@php
     $table_name='categories';
 @endphp
 @section('table')

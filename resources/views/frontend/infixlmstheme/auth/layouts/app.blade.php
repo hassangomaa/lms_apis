@@ -1,3 +1,6 @@
+@php
+    app()->setLocale(auth()->user()->language_code);
+@endphp
 <!doctype html>
 <html class="no-js" lang="zxx">
 

@@ -1,3 +1,6 @@
+@php
+    app()->setLocale(auth()->user()->language_code);
+@endphp
 @include(theme('partials._header'))
 
 <div class="dashboard_main_wrapper">

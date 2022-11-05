@@ -11,7 +11,9 @@
     <meta name="_token" content="{!! csrf_token() !!}"/>
     @include('backend.partials.style')
     <script src="{{asset('public/js/common.js')}}"></script>
-
+    @php
+        app()->setLocale(auth()->user()->language_code);
+    @endphp
 
     <script>
         window.Laravel = {
