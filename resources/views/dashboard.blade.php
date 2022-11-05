@@ -14,13 +14,17 @@
         </div>
     @endif
     @include("backend.partials.alertMessage")
+{{--    @dd($currentLang =auth()->user()->language_code);--}}
 
+  @php
+    app()->setLocale(auth()->user()->language_code);
+    @endphp
     <div class="container-fluid p-0">
         <div class="row">
             <div class="col-lg-12">
                 <div class="main-title">
                     <h3 class="mb-0">@lang('common.Welcome') @lang('common.To') - {{Settings('site_title')}}
-                        {{-- | {{@Auth::user()->role->name}}</h3> --}}
+                         | {{@Auth::user()->role->name}}</h3>
                 </div>
             </div>
         </div>

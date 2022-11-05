@@ -6,7 +6,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="icon" href="{{getCourseImage(Settings('favicon'))}}" type="image/png"/>
     <title>
-        {{Settings('site_title')  ? Settings('site_title')  : 'Infix LMS'}}
+        {{Settings('site_title')  ? Settings('site_title')  : ' LMS'}}
     </title>
     <meta name="_token" content="{!! csrf_token() !!}"/>
     @include('backend.partials.style')
@@ -67,13 +67,13 @@
 <input type="hidden" name="chat_settings" id="chat_settings" value="{{ env('BROADCAST_DRIVER') }}">
 <div class="main-wrapper" style="min-height: 600px">
     <!-- Sidebar  -->
-@if (isModuleActive('LmsSaas') && Auth::user()->is_saas_admin==1 && Auth::user()->active_panel=='saas')
-    @include('lmssaas::partials.sidebar')
-@elseif(isModuleActive('LmsSaasMD') && Auth::user()->is_saas_admin==1 && Auth::user()->active_panel=='saas')
-    @include('lmssaasmd::partials.sidebar')
-@else
+{{--@if (isModuleActive('LmsSaas') && Auth::user()->is_saas_admin==1 && Auth::user()->active_panel=='saas')--}}
+{{--    @include('backend.partials.sidebar')--}}
+{{--@elseif(isModuleActive('LmsSaasMD') && Auth::user()->is_saas_admin==1 && Auth::user()->active_panel=='saas')--}}
+{{--    @include('lmssaasmd::partials.sidebar')--}}
+{{--@else--}}
     @include('backend.partials.sidebar')
-@endif
+{{--@endif--}}
 
 
 <!-- Page Content  -->

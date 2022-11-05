@@ -659,12 +659,12 @@ Route::prefix('systemsetting')->group(function () {
     Route::get('/get_language', 'SystemSettingController@getLocaleLang');
 });
 
-Route::group(['prefix' => 'admin/systemsetting', 'middleware' => ['auth', 'admin']], function () {
+Route::group(['prefix' => 'admin/systemsetting', 'middleware' => ['auth']], function () {
 
     Route::get('/getAllLanguage', 'SystemSettingController@getAllLanguage');
 });
 
-Route::group(['prefix' => 'admin/systemsetting', 'middleware' => ['auth', 'admin']], function () {
+Route::group(['prefix' => 'admin/systemsetting', 'middleware' => ['auth']], function () {
     Route::get('/', 'SystemSettingController@index');
 
     Route::post('/add_phrase', 'SystemSettingController@addPhrase');
@@ -682,7 +682,7 @@ Route::group(['prefix' => 'admin/systemsetting', 'middleware' => ['auth', 'admin
 
     //Language Setting
 
-//    Route::get('/getAllLanguage', 'SystemSettingController@getAllLanguage');
+    Route::get('/getAllLanguage', 'SystemSettingController@getAllLanguage');
     Route::get('/languageStatus/{id}', 'SystemSettingController@languageStatus');
     Route::post('/language_add', 'SystemSettingController@language_add');
     Route::get('/language_edit/{id}', 'SystemSettingController@language_edit');

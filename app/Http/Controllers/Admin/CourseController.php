@@ -74,7 +74,7 @@ class CourseController extends Controller
         }
         try {
             Category::find($id)->delete();
-            Toastr::success(trans('common.Operation successful'), trans('common.Success'));
+//            Toastr::success(trans('common.Operation successful'), trans('common.Success'));
             return redirect()->back();
         } catch (\Exception $e) {
             GettingError($e->getMessage(), url()->current(), request()->ip(), request()->userAgent());
@@ -200,9 +200,9 @@ class CourseController extends Controller
 
     public function category_update(Request $request)
     {
-        if (demoCheck()) {
-            return redirect()->back();
-        }
+//        if (demoCheck()) {
+//            return redirect()->back();
+//        }
         $rules = [
             'name' => 'required|max:255|unique:categories,name,' . $request->id,
         ];
@@ -239,30 +239,37 @@ class CourseController extends Controller
 
 
             $store = Category::find($request->id);
-            foreach ($request->name as $key => $name) {
-                $store->setTranslation('name', $key, $name);
-            }
-            foreach ($request->description as $key => $description) {
-                $store->setTranslation('description', $key, $description);
-            }
+//            foreach ($request->name as $key => $name) {
+//                $store->setTranslation('name', $key, $name);
+//            }
+//            foreach ($request->description as $key => $description) {
+//                $store->setTranslation('description', $key, $description);
+//            }
             $store->status = $request->status;
             $store->url = $request->url;
             $store->title = $request->title;
-            $store->show_home = $request->show_home;
+            if($request->show_home)
+                $store->show_home = $request->show_home;
+           else $store->show_home = 0;
+
             $store->position_order = $request->position_order;
-            if (@$url1) {
-                $store->image = $url1;
-            }
-            if (@$url2) {
-                $store->thumbnail = $url2;
-            }
+//            if (@$url1) {
+//                $store->image = $url1;
+//            }
+//            if (@$url2) {
+//                $store->thumbnail = $url2;
+//            }
 
             if (!empty($request->parent)) {
                 $store->parent_id = $request->parent;
             } else {
                 $store->parent_id = null;
             }
+//            $request;
+//            die();
             $results = $store->save();
+//            return response()->json($request->name , 200);
+
             if ($results) {
                 Toastr::success(trans('common.Operation successful'), trans('common.Success'));
                 return redirect()->route('course.category');
@@ -271,7 +278,9 @@ class CourseController extends Controller
                 return redirect()->back();
             }
         } catch (\Exception $e) {
-            GettingError($e->getMessage(), url()->current(), request()->ip(), request()->userAgent());
+                        return response()->json($e , 404);
+
+//            GettingError($e->getMessage(), url()->current(), request()->ip(), request()->userAgent());
         }
     }
 
